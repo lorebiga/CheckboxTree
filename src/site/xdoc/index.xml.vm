@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+    <properties>
+        <author email="lorenzo.bigagli@gmail.com">Lorenzo Bigagli</author>
+        <title>Introduction</title>
+    </properties>
+
+    <body>
+
+        <section name="${project.name}">
+
+            <p><b>CheckboxTree 3.2 is out!</b><br/> We actively maintain CheckboxTree and you are kindly
+                encouraged to try and comment it: your feedback (particularly on your specific
+                use-case) is highly appreciated!<br/> If you have a Bug Report, or a Requests For
+                Enhancement, visit our <a
+                    href="https://ulisse.pin.unifi.it/trac/lablib-checkboxtree">Issue tracker</a>
+                and pin them down!
+            </p>
+            <p>
+                Since its first public appearance on 09/11/2007,
+                CheckboxTree has been downloaded by about 5.000 users from 91 countries in
+                the 6 continents.<br/> 
+                <b>If you like and use CheckboxTree, please <a href="donate.html">make a donation!</a></b><br/>
+                Supporting open-source software is fair and in your interest!
+            </p>
+
+            <p>${project.description}</p>
+
+            <img src="images/checkboxtree.jpg"/>
+
+            <p>The CheckboxTree in action.</p>
+
+            <applet
+                code="it.cnr.imaa.essi.lablib.gui.checkboxtree.examples.CheckboxTreeApplet.class"
+                width="640" height="480"
+                archive="http://ulisse.pin.unifi.it:8081/nexus/service/local/artifact/maven/redirect?r=lab.open.rel&#38;g=${project.groupId}&#38;a=${project.artifactId}&#38;v=${project.version}&#38;p=${project.packaging}"
+            />
+        </section>
+
+       <!-- <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script>
+        <script type="text/javascript">_uacct='UA-394405-2';urchinTracker();</script>
+        -->
+
+    </body>
+</document>

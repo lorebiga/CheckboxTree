@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{santosh}
+Santhosh Kumar.
+\newblock Jtree with checkboxes.
+\newblock http://www.jroller.com/page/santosh.
+
+\bibitem{swing-jtree}
+Sun.
+\newblock The swing jtree documentation.
+\newblock http://java.sun.com/j2se/1.5.0/docs/ api/javax/swing/JTree.html.
+
+\bibitem{sample}
+John Zukowski.
+\newblock Checkbox node tree sample.
+\newblock http://www.java2s.com/Code/Java/Swing-JFC/CheckBoxNodeTreeSample.htm.
+
+\end{thebibliography}

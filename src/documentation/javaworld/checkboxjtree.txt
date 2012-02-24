@@ -1,0 +1,96 @@
+Article Title
+*************
+CheckboxTree
+
+Word Count:
+Word count can be approximate and should not include source code.
+
+Mission/Scope:
+Explain why JavaWorld readers should care about/must read this article. What makes it compelling? What is the learning benefit?
+
+tanta gente chiede questo componente
+santosh, e altri
+limiti (santoshcn non è mvc-swing)
+poca configurabilità etc.
+
+
+Delivery Date:
+Fill in the blank for us: "I can get this article to you by..."
+
+Supportive Materials:
+Describe the applet(s), code sample(s), graphic(s), and other elements you will include.
+Graphics:
+1) uml diagram
+2) CheckboxTree snapshot
+...
+
+Abstract/Summary:
+This should be an overview of the article's contents and an explanation to the readers — and editors! — that should compel
+ people to read the article.
+classi 
+
+*SUMMARY
+* Swing similarity
+* The greyness semantic
+* CheckboxTreeCellRenderer
+* Checking Modes
+* Considerations and Future work
+
+*Introduction
+This articles describes our Swing Component called CheckboxTree. It's a JTree that has in each of its node a JCheckbox.
+Similar components can be found on installation procedures, preferences windows etc. We already knew about other free 
+implementations, (e.g. "The Santhosh'Tree" http://www.jroller.com/page/santhosh/20050610  or "CheckBox Node Tree Sample"
+http://www.java2s.com/Code/Java/Swing-JFC/CheckBoxNodeTreeSample.htm) but they lacked of features that we needed and
+that we have added to this new GPL Component. Moreover we wrote this component trying to keep a "Swing-Compatible" approach
+and trying to write a robust and customable component.
+
+* Definition
+* Checking
+* The greyness semantic
+In our component if a checkbox has a grey background it means that exist some of its descendants with a checking status
+different from its one.
+* checking mode
+
+** Architecture
+* Swing similarity
+The main new property added to the initial JTree is the management of the checking, that is the set of the TreePaths that
+are checked (those that have a check on the node checkbox). For this scope we wrote the TreeCheckingModel class.
+We gave to this class an API similar to the Swing TreeSelectionModel, that is the class that in Swing manages the selection.
+This gives the final user easyness of use, assuming that is already familiar with Swing. 
+The similarity is extended to the classes hierarchy and relations structure as it's possible to see in the UML diagram.
+
+<UML diagram>
+* Objects instead of TreeNodes
+
+* Performance improvements
+
+* Checking Modes
+A relevant feature implemented in our component is the possibility of changing the propagation style of the checking (and
+possibly writing new ones). For propagation mode we intend the way the checkboxes become checked after a user has clicked
+on one of them.
+In the simple checking mode for example...
+others checking modes
+
+
+
+
+* CheckboxTreeCellRenderer
+Harmed Quadristate
+
+
+
+
+* Considerations and Future work
+Some limitations of this component are known and we plan to do the fixes in future releases. The main limitation regards the
+component performance when dealing with very full trees.
+For example if the checking propagation mode is setted on down recursive and we perform a click on a node with many descendants
+the GUI freezes for the time neeeded to insert all the sub paths that become checked in the relevant hashsets.
+The information that all the descendants of a node are checked could instead be memorized putting only the ancestor in an
+appropriate hashset and thus cutting down the time of execution.
+
+Representative samples of your published work
+
+Background/Biographical information:
+Include information about your Java expertise, your job title and a brief description of your position, your educational background,
+your outside interests.
+Convince us — and our readers — that you are the best author imaginable for the suggested article! 

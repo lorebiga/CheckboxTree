@@ -1,0 +1,43 @@
+CheckboxTree
+
+Word Count:
+About 1400
+
+Mission/Scope:
+We describe the implementation of a widget that is commonly found in GUIs, but is missing in Swing.
+Existing similar components can be found, but, in our opinion, they lack important features.
+Since our implementation is based on Swing architecture and components, readers can also improve their understanding
+of Swing library and learn on how to design new GUI widgets.
+Lastly, they can add a useful open-source widget to their toolbox :-)
+
+Delivery Date:
+We can get this article to you by July, 4th
+
+Supportive Materials:
+The article includes three images (one image of the component and two UML diagrams). We would also attach the jar 
+packages with the component classes, source code/javadocs and an example application using the component (also 
+available from our website and our maven repository).
+
+Abstract/Summary:
+We describe the CheckboxTree, a Swing-based tree with a checkbox at
+each of its nodes, similar to those commonly found in installers (and
+unfortunately missing in Swing).
+We wrote the component building upon Swing design, and spiced it up with
+features like configurable styles of check propagation and greyed checkboxes
+when a subtree is not completely (un)checked.
+We give insights about its design, along with usage examples, documentation and
+source code.
+
+Representative samples of your published work
+We mainly publish scientific articles in conferences and journals (list available if needed).
+The GI-go Geo-Browser is one of our flagship software projects: http://zeus.pin.unifi.it/joomla/index.php?option=com_content&task=view&id=12&Itemid=59
+
+Background/Biographical information:
+Lorenzo Bigagli is a researcher at the Italian National Research Council and the University of Florence, currently taking a PhD on advanced technologies for Spatial Data Infrastructures.
+He loves Java since more than 10 years (and counting), particularly for its support to concurrent programming and networking.
+
+Enrico Boldrini is a computer scientist, taking a MSc at the University of Florence.
+He also works for the Italian National Research Council, in particular he is a member of the 
+Earth and Space Information Technologies Group and he develops Java applications for Geomatics.
+
+They happen to write new custom Java components, usually trying to provide general solutions to share with the Java community.

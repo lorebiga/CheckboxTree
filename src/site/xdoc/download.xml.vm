@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+    <properties>
+        <author email="lorenzo.bigagli@gmail.com">Lorenzo Bigagli</author>
+        <title>Download</title>
+    </properties>
+    <body>
+        <section name="${project.name} Download">
+            <subsection name="Download with maven">
+                <p>If you use Maven 2 for your build, simply add this repository to you POM:</p>
+                <source>
+                    <pre>
+&lt;repository&gt;
+    &lt;name&gt;ESSI-Lab repository&lt;/name&gt;
+    &lt;url&gt;http://ulisse.pin.unifi.it:8081/nexus/content/groups/open.repos&lt;/url&gt;
+    &lt;releases&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+    &lt;/releases&gt;
+    &lt;snapshots&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+    &lt;/snapshots&gt;
+&lt;/repository&gt;
+</pre>
+                </source>
+                <p>and then add this dependency:</p>
+                <source>
+                    <pre>
+&lt;dependency&gt;
+    &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+    &lt;artifactId&gt;${project.artifactId}&lt;/artifactId&gt;
+    &lt;version&gt;${project.version}&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+                </source>
+            </subsection>
+            <subsection name="Direct download">
+                <p>To directly browse our repository manager for old and/or unreleased (snapshot) versions, visit <a
+                        href="http://ulisse.pin.unifi.it:8081/nexus/index.html#nexus-search;classname~checkboxtree"
+                        >this page</a>.</p>
+            </subsection>
+        </section>
+        
+        <!-- <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script>
+        <script type="text/javascript">_uacct='UA-394405-2';urchinTracker();</script>
+        -->
+        
+    </body>
+</document>
