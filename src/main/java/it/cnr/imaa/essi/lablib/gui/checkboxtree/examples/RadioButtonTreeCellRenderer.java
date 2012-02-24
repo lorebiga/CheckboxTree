@@ -46,6 +46,7 @@ public class RadioButtonTreeCellRenderer extends JPanel implements CheckboxTreeC
 	frame.add(tree);
 	tree.expandAll();
 	frame.pack();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setVisible(true);
     }
 
