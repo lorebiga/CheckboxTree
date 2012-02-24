@@ -9,7 +9,7 @@
 
         <section name="${project.name}">
 
-            <p><b>CheckboxTree 3.2 is out!</b><br/> We actively maintain CheckboxTree and you are kindly
+            <p><b>CheckboxTree ${project.version} is out!</b><br/> We actively maintain CheckboxTree and you are kindly
                 encouraged to try and comment it: your feedback (particularly on your specific
                 use-case) is highly appreciated!<br/> If you have a Bug Report, or a Requests For
                 Enhancement, visit our <a
