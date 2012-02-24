@@ -3,7 +3,7 @@
 
     <!-- CheckboxTree POM -->
     <artifactId>lablib-checkboxtree</artifactId>
-    <version>3.3</version>
+    <version>3.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <groupId>it.cnr.imaa.essi</groupId>
 
@@ -129,7 +129,7 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:https://ulisse.pin.unifi.it/svn-krb/lablib/lablib-checkboxtree/tags/lablib-checkboxtree-3.3</connection>
+        <connection>scm:svn:https://ulisse.pin.unifi.it/svn-krb/lablib/lablib-checkboxtree/trunk</connection>
     </scm>
 
 </project>
