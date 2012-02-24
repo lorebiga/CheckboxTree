@@ -38,140 +38,132 @@ import javax.swing.tree.TreePath;
  * @author boldrini
  * @author bigagli
  */
-public class DefaultCheckboxTreeCellRenderer extends JPanel implements
-		CheckboxTreeCellRenderer {
+public class DefaultCheckboxTreeCellRenderer extends JPanel implements CheckboxTreeCellRenderer {
 
-	/**
-	 * Loads an ImageIcon from the file iconFile, searching it in the classpath.
+    /**
+     * Loads an ImageIcon from the file iconFile, searching it in the classpath.
+     */
+    protected static ImageIcon loadIcon(String iconFile) {
+	try {
+	    return new ImageIcon(DefaultCheckboxTreeCellRenderer.class.getClassLoader().getResource(iconFile));
+	} catch (NullPointerException npe) {// did not find the resource
+	    return null;
+	}
+    }
+
+    protected QuadristateCheckbox checkBox = new QuadristateCheckbox();
+
+    protected DefaultTreeCellRenderer label = new DefaultTreeCellRenderer();
+
+    // @Override
+    // public void doLayout() {
+    // Dimension d_check = this.checkBox.getPreferredSize();
+    // Dimension d_label = this.label.getPreferredSize();
+    // int y_check = 0;
+    // int y_label = 0;
+    // if (d_check.height < d_label.height) {
+    // y_check = (d_label.height - d_check.height) / 2;
+    // } else {
+    // y_label = (d_check.height - d_label.height) / 2;
+    // }
+    // this.checkBox.setLocation(0, y_check);
+    // this.checkBox.setBounds(0, y_check, d_check.width, d_check.height);
+    // this.label.setLocation(d_check.width, y_label);
+    // this.label.setBounds(d_check.width, y_label, d_label.width,
+    // d_label.height);
+    // }
+
+    public DefaultCheckboxTreeCellRenderer() {
+	this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+	this.setOpaque(false);
+	add(this.checkBox);
+	add(this.label);
+
+	// this method was as follows (see ticket #6):
+	// this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+	// add(this.checkBox);
+	// add(this.label);
+	// this.checkBox.setBackground(UIManager.getColor("Tree.textBackground"));
+	// this.setBackground(UIManager.getColor("Tree.textBackground"));
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+	Dimension d_check = this.checkBox.getPreferredSize();
+	Dimension d_label = this.label.getPreferredSize();
+	return new Dimension(d_check.width + d_label.width, (d_check.height < d_label.height ? d_label.height : d_check.height));
+    }
+
+    /**
+     * Decorates this renderer based on the passed in components.
+     */
+    public Component getTreeCellRendererComponent(JTree tree, Object object, boolean selected, boolean expanded, boolean leaf, int row,
+	    boolean hasFocus) {
+	/*
+	 * most of the rendering is delegated to the wrapped
+	 * DefaultTreeCellRenderer, the rest depends on the TreeCheckingModel
 	 */
-	protected static ImageIcon loadIcon(String iconFile) {
-		try {
-			return new ImageIcon(DefaultCheckboxTreeCellRenderer.class
-					.getClassLoader().getResource(iconFile));
-		} catch (NullPointerException npe) {// did not find the resource
-			return null;
-		}
+	this.label.getTreeCellRendererComponent(tree, object, selected, expanded, leaf, row, hasFocus);
+	if (tree instanceof CheckboxTree) {
+	    TreePath path = tree.getPathForRow(row);
+	    TreeCheckingModel checkingModel = ((CheckboxTree) tree).getCheckingModel();
+	    this.checkBox.setEnabled(checkingModel.isPathEnabled(path) && tree.isEnabled());
+	    boolean checked = checkingModel.isPathChecked(path);
+	    boolean greyed = checkingModel.isPathGreyed(path);
+	    if (checked && !greyed) {
+		this.checkBox.setState(State.CHECKED);
+	    }
+	    if (!checked && greyed) {
+		this.checkBox.setState(State.GREY_UNCHECKED);
+	    }
+	    if (checked && greyed) {
+		this.checkBox.setState(State.GREY_CHECKED);
+	    }
+	    if (!checked && !greyed) {
+		this.checkBox.setState(State.UNCHECKED);
+	    }
 	}
+	return this;
+    }
 
-	protected QuadristateCheckbox checkBox = new QuadristateCheckbox();
+    /**
+     * Checks if the (x,y) coordinates are on the Checkbox.
+     * 
+     * @return boolean
+     * @param x
+     * @param y
+     */
+    public boolean isOnHotspot(int x, int y) {
+	return this.checkBox.contains(x, y);
+    }
 
-	protected DefaultTreeCellRenderer label = new DefaultTreeCellRenderer();
-
-	// @Override
-	// public void doLayout() {
-	// Dimension d_check = this.checkBox.getPreferredSize();
-	// Dimension d_label = this.label.getPreferredSize();
-	// int y_check = 0;
-	// int y_label = 0;
-	// if (d_check.height < d_label.height) {
-	// y_check = (d_label.height - d_check.height) / 2;
-	// } else {
-	// y_label = (d_check.height - d_label.height) / 2;
-	// }
-	// this.checkBox.setLocation(0, y_check);
-	// this.checkBox.setBounds(0, y_check, d_check.width, d_check.height);
-	// this.label.setLocation(d_check.width, y_label);
-	// this.label.setBounds(d_check.width, y_label, d_label.width,
-	// d_label.height);
-	// }
-
-	public DefaultCheckboxTreeCellRenderer() {
-		this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		this.setOpaque(false);
-		add(this.checkBox);
-		add(this.label);
-
-		// this method was as follows (see ticket #6):
-		// this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		// add(this.checkBox);
-		// add(this.label);
-		// this.checkBox.setBackground(UIManager.getColor("Tree.textBackground"));
-		// this.setBackground(UIManager.getColor("Tree.textBackground"));
+    @Override
+    public void setBackground(Color color) {
+	if (color instanceof ColorUIResource) {
+	    color = null;
 	}
+	super.setBackground(color);
+    }
 
-	@Override
-	public Dimension getPreferredSize() {
-		Dimension d_check = this.checkBox.getPreferredSize();
-		Dimension d_label = this.label.getPreferredSize();
-		return new Dimension(d_check.width + d_label.width,
-				(d_check.height < d_label.height ? d_label.height
-						: d_check.height));
-	}
+    /**
+     * Sets the icon used to represent non-leaf nodes that are not expanded.
+     */
+    public void setClosedIcon(Icon newIcon) {
+	this.label.setClosedIcon(newIcon);
+    }
 
-	/**
-	 * Decorates this renderer based on the passed in components.
-	 */
-	public Component getTreeCellRendererComponent(JTree tree, Object object,
-			boolean selected, boolean expanded, boolean leaf, int row,
-			boolean hasFocus) {
-		/*
-		 * most of the rendering is delegated to the wrapped
-		 * DefaultTreeCellRenderer, the rest depends on the TreeCheckingModel
-		 */
-		this.label.getTreeCellRendererComponent(tree, object, selected,
-				expanded, leaf, row, hasFocus);
-		if (tree instanceof CheckboxTree) {
-			TreePath path = tree.getPathForRow(row);
-			TreeCheckingModel checkingModel = ((CheckboxTree) tree)
-					.getCheckingModel();
-			this.checkBox.setEnabled(checkingModel.isPathEnabled(path)
-					&& tree.isEnabled());
-			boolean checked = checkingModel.isPathChecked(path);
-			boolean greyed = checkingModel.isPathGreyed(path);
-			if (checked && !greyed) {
-				this.checkBox.setState(State.CHECKED);
-			}
-			if (!checked && greyed) {
-				this.checkBox.setState(State.GREY_UNCHECKED);
-			}
-			if (checked && greyed) {
-				this.checkBox.setState(State.GREY_CHECKED);
-			}
-			if (!checked && !greyed) {
-				this.checkBox.setState(State.UNCHECKED);
-			}
-		}
-		return this;
-	}
+    /**
+     * Sets the icon used to represent leaf nodes.
+     */
+    public void setLeafIcon(Icon newIcon) {
+	this.label.setLeafIcon(newIcon);
+    }
 
-	/**
-	 * Checks if the (x,y) coordinates are on the Checkbox.
-	 * 
-	 * @return boolean
-	 * @param x
-	 * @param y
-	 */
-	public boolean isOnHotspot(int x, int y) {
-		return this.checkBox.contains(x, y);
-	}
-
-	@Override
-	public void setBackground(Color color) {
-		if (color instanceof ColorUIResource) {
-			color = null;
-		}
-		super.setBackground(color);
-	}
-
-	/**
-	 * Sets the icon used to represent non-leaf nodes that are not expanded.
-	 */
-	public void setClosedIcon(Icon newIcon) {
-		this.label.setClosedIcon(newIcon);
-	}
-
-	/**
-	 * Sets the icon used to represent leaf nodes.
-	 */
-	public void setLeafIcon(Icon newIcon) {
-		this.label.setLeafIcon(newIcon);
-	}
-
-	/**
-	 * Sets the icon used to represent non-leaf nodes that are expanded.
-	 */
-	public void setOpenIcon(Icon newIcon) {
-		this.label.setOpenIcon(newIcon);
-	}
+    /**
+     * Sets the icon used to represent non-leaf nodes that are expanded.
+     */
+    public void setOpenIcon(Icon newIcon) {
+	this.label.setOpenIcon(newIcon);
+    }
 
 }

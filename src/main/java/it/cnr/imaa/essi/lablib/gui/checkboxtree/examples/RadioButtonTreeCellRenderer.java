@@ -36,55 +36,52 @@ import javax.swing.tree.TreePath;
  * 
  * @author bigagli
  */
-public class RadioButtonTreeCellRenderer extends JPanel implements
-		CheckboxTreeCellRenderer {
+public class RadioButtonTreeCellRenderer extends JPanel implements CheckboxTreeCellRenderer {
 
-	public static void main(String[] args) {
-		CheckboxTree tree = new CheckboxTree();
-		tree.getCheckingModel().setCheckingMode(CheckingMode.SINGLE);
-		tree.setCellRenderer(new RadioButtonTreeCellRenderer());
-		JFrame frame = new JFrame("RadioButton tree");
-		frame.add(tree);
-		tree.expandAll();
-		frame.pack();
-		frame.setVisible(true);
-	}
+    public static void main(String[] args) {
+	CheckboxTree tree = new CheckboxTree();
+	tree.getCheckingModel().setCheckingMode(CheckingMode.SINGLE);
+	tree.setCellRenderer(new RadioButtonTreeCellRenderer());
+	JFrame frame = new JFrame("RadioButton tree");
+	frame.add(tree);
+	tree.expandAll();
+	frame.pack();
+	frame.setVisible(true);
+    }
 
-	protected JRadioButton button = new JRadioButton();
+    protected JRadioButton button = new JRadioButton();
 
-	protected JLabel label = new JLabel();
+    protected JLabel label = new JLabel();
 
-	public RadioButtonTreeCellRenderer() {
-		super();
-		label.setFocusable(true);
-		label.setOpaque(true);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		add(button);
-		add(label);
-		button.setBackground(UIManager.getColor("Tree.textBackground"));
-		setBackground(UIManager.getColor("Tree.textBackground"));
-	}
+    public RadioButtonTreeCellRenderer() {
+	super();
+	label.setFocusable(true);
+	label.setOpaque(true);
+	setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+	add(button);
+	add(label);
+	button.setBackground(UIManager.getColor("Tree.textBackground"));
+	setBackground(UIManager.getColor("Tree.textBackground"));
+    }
 
-	public Component getTreeCellRendererComponent(JTree tree, Object value,
-			boolean selected, boolean expanded, boolean leaf, int row,
-			boolean hasFocus) {
-		label.setText(value.toString());
-		if (selected)
-			label.setBackground(UIManager.getColor("Tree.selectionBackground"));
-		else
-			label.setBackground(UIManager.getColor("Tree.textBackground"));
-		TreeCheckingModel checkingModel = ((CheckboxTree) tree)
-				.getCheckingModel();
-		TreePath path = tree.getPathForRow(row);
-		boolean enabled = checkingModel.isPathEnabled(path);
-		boolean checked = checkingModel.isPathChecked(path);
-		button.setEnabled(enabled);
-		label.setForeground(Color.black);
-		button.setSelected(checked);
-		return this;
-	}
+    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row,
+	    boolean hasFocus) {
+	label.setText(value.toString());
+	if (selected)
+	    label.setBackground(UIManager.getColor("Tree.selectionBackground"));
+	else
+	    label.setBackground(UIManager.getColor("Tree.textBackground"));
+	TreeCheckingModel checkingModel = ((CheckboxTree) tree).getCheckingModel();
+	TreePath path = tree.getPathForRow(row);
+	boolean enabled = checkingModel.isPathEnabled(path);
+	boolean checked = checkingModel.isPathChecked(path);
+	button.setEnabled(enabled);
+	label.setForeground(Color.black);
+	button.setSelected(checked);
+	return this;
+    }
 
-	public boolean isOnHotspot(int x, int y) {
-		return (button.getBounds().contains(x, y));
-	}
+    public boolean isOnHotspot(int x, int y) {
+	return (button.getBounds().contains(x, y));
+    }
 }

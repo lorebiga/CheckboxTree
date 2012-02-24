@@ -22,25 +22,24 @@ import javax.swing.JFrame;
  */
 public class ToggleOnLabelTest extends CheckboxTree {
 
-	public ToggleOnLabelTest() {
-		setCellRenderer(new LabelCheckboxTreeCellRenderer());
-	}
+    public ToggleOnLabelTest() {
+	setCellRenderer(new LabelCheckboxTreeCellRenderer());
+    }
 
-	public static void main(String[] args) {
-		JFrame f = new JFrame();
-		CheckboxTree tree = new ToggleOnLabelTest();
-		f.add(tree);
-		f.setSize(300, 200);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setVisible(true);
-	}
+    public static void main(String[] args) {
+	JFrame f = new JFrame();
+	CheckboxTree tree = new ToggleOnLabelTest();
+	f.add(tree);
+	f.setSize(300, 200);
+	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	f.setVisible(true);
+    }
 
-	class LabelCheckboxTreeCellRenderer extends DefaultCheckboxTreeCellRenderer
-			implements CheckboxTreeCellRenderer {
-		@Override
-		public boolean isOnHotspot(int x, int y) {
-			return true;
-		}
+    class LabelCheckboxTreeCellRenderer extends DefaultCheckboxTreeCellRenderer implements CheckboxTreeCellRenderer {
+	@Override
+	public boolean isOnHotspot(int x, int y) {
+	    return true;
 	}
+    }
 
 }

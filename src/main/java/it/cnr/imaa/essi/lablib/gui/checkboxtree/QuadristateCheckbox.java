@@ -46,81 +46,81 @@ import javax.swing.plaf.ActionMapUIResource;
 
 public class QuadristateCheckbox extends JCheckBox {
 
-	public QuadristateCheckbox() {
-		this(null);
-	}
+    public QuadristateCheckbox() {
+	this(null);
+    }
 
-	public QuadristateCheckbox(String text) {
-		this(text, State.UNCHECKED);
-	}
+    public QuadristateCheckbox(String text) {
+	this(text, State.UNCHECKED);
+    }
 
-	public QuadristateCheckbox(String text, Icon icon, State state) {
-		super(text, icon);
-		// Add a listener for when the mouse is pressed
-		super.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				grabFocus();
-				getModel().nextState();
-			}
-		});
-		// Reset the keyboard action map
-		ActionMap map = new ActionMapUIResource();
-		map.put("pressed", new AbstractAction() {
-			public void actionPerformed(ActionEvent e) {
-				grabFocus();
-				getModel().nextState();
-			}
-		});
-		map.put("released", null);
-		SwingUtilities.replaceUIActionMap(this, map);
-		setState(state);
-	}
+    public QuadristateCheckbox(String text, Icon icon, State state) {
+	super(text, icon);
+	// Add a listener for when the mouse is pressed
+	super.addMouseListener(new MouseAdapter() {
+	    @Override
+	    public void mousePressed(MouseEvent e) {
+		grabFocus();
+		getModel().nextState();
+	    }
+	});
+	// Reset the keyboard action map
+	ActionMap map = new ActionMapUIResource();
+	map.put("pressed", new AbstractAction() {
+	    public void actionPerformed(ActionEvent e) {
+		grabFocus();
+		getModel().nextState();
+	    }
+	});
+	map.put("released", null);
+	SwingUtilities.replaceUIActionMap(this, map);
+	setState(state);
+    }
 
-	public QuadristateCheckbox(String text, State initial) {
-		this(text, null, initial);
-	}
+    public QuadristateCheckbox(String text, State initial) {
+	this(text, null, initial);
+    }
 
-	/** No one may add mouse listeners, not even Swing! */
-	@Override
-	public void addMouseListener(MouseListener l) {
-	}
+    /** No one may add mouse listeners, not even Swing! */
+    @Override
+    public void addMouseListener(MouseListener l) {
+    }
 
-	@Override
-	public QuadristateButtonModel getModel() {
-		return (QuadristateButtonModel) super.getModel();
-	}
+    @Override
+    public QuadristateButtonModel getModel() {
+	return (QuadristateButtonModel) super.getModel();
+    }
 
-	/**
-	 * Return the current state, which is determined by the selection status of
-	 * the model.
-	 */
-	public State getState() {
-		return getModel().getState();
-	}
+    /**
+     * Return the current state, which is determined by the selection status of
+     * the model.
+     */
+    public State getState() {
+	return getModel().getState();
+    }
 
-	@Override
-	protected void init(String text, Icon icon) {
-		// substitutes the underlying checkbox model:
-		// if we had call setModel an exception would be raised
-		// because setModel calls a getModel that return a
-		// QuadristateButtonModel, but at this point we
-		// have a JToggleButtonModel
-		this.model = new QuadristateButtonModel();
-		super.setModel(this.model);// side effect: set listeners
-		super.init(text, icon);
-	}
+    @Override
+    protected void init(String text, Icon icon) {
+	// substitutes the underlying checkbox model:
+	// if we had call setModel an exception would be raised
+	// because setModel calls a getModel that return a
+	// QuadristateButtonModel, but at this point we
+	// have a JToggleButtonModel
+	this.model = new QuadristateButtonModel();
+	super.setModel(this.model);// side effect: set listeners
+	super.init(text, icon);
+    }
 
-	public void setModel(QuadristateButtonModel model) {
-		super.setModel(model);
-	}
+    public void setModel(QuadristateButtonModel model) {
+	super.setModel(model);
+    }
 
-	/**
-	 * Set the new state to either CHECKED, UNCHECKED or GREY_CHECKED. If state
-	 * == null, it is treated as GREY_CHECKED.
-	 */
-	public void setState(State state) {
-		getModel().setState(state);
-	}
+    /**
+     * Set the new state to either CHECKED, UNCHECKED or GREY_CHECKED. If state
+     * == null, it is treated as GREY_CHECKED.
+     */
+    public void setState(State state) {
+	getModel().setState(state);
+    }
 
 }

@@ -17,9 +17,9 @@ import javax.swing.tree.TreeNode;
 
 public class CimballiTest {
 
-	public static void main(String[] args) {
-		CheckboxTree ct = new CheckboxTree((TreeNode) null);
-		System.out.println(ct);
-	}
+    public static void main(String[] args) {
+	CheckboxTree ct = new CheckboxTree((TreeNode) null);
+	System.out.println(ct);
+    }
 
 }

@@ -24,47 +24,43 @@ import javax.swing.UIManager;
 
 public class QuadristateCheckBoxTest {
 
-	public static void main(String args[]) throws Exception {
-		JFrame frame = new JFrame("QuadristateCheckBoxTest");
-		frame.getContentPane().setLayout(new GridLayout(0, 1, 5, 5));
-		final QuadristateCheckbox swingQuadristateBox = new QuadristateCheckbox(
-				"Quadristate Checkbox with Swing L&F", State.UNCHECKED);
-		swingQuadristateBox.setEnabled(false);
-		frame.getContentPane().add(swingQuadristateBox);
-		final JCheckBox swingNormalBox = new JCheckBox(
-				"Normal Checkbox with Swing L&F");
-		swingNormalBox.setEnabled(false);
-		frame.getContentPane().add(swingNormalBox);
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		final QuadristateCheckbox quadristateCheck = new QuadristateCheckbox(
-				"Quadristate Checkbox with Native L&F", State.UNCHECKED);
-		quadristateCheck.setEnabled(false);
-		frame.getContentPane().add(quadristateCheck);
-		final JCheckBox normalCheck = new JCheckBox(
-				"Normal Checkbox with Native L&F");
-		normalCheck.setEnabled(false);
-		frame.getContentPane().add(normalCheck);
-		// wait for 3 seconds, then enable all check boxes
-		new Thread() {
-			@Override
-			public void run() {
-				try {
-					Thread.sleep(3000);
-					swingQuadristateBox.setEnabled(true);
-					swingNormalBox.setEnabled(true);
-					quadristateCheck.setEnabled(true);
-					normalCheck.setEnabled(true);
-				} catch (InterruptedException ex) {
-				}
-			}
-		}.start();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setVisible(true);
+    public static void main(String args[]) throws Exception {
+	JFrame frame = new JFrame("QuadristateCheckBoxTest");
+	frame.getContentPane().setLayout(new GridLayout(0, 1, 5, 5));
+	final QuadristateCheckbox swingQuadristateBox = new QuadristateCheckbox("Quadristate Checkbox with Swing L&F", State.UNCHECKED);
+	swingQuadristateBox.setEnabled(false);
+	frame.getContentPane().add(swingQuadristateBox);
+	final JCheckBox swingNormalBox = new JCheckBox("Normal Checkbox with Swing L&F");
+	swingNormalBox.setEnabled(false);
+	frame.getContentPane().add(swingNormalBox);
+	try {
+	    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
+	final QuadristateCheckbox quadristateCheck = new QuadristateCheckbox("Quadristate Checkbox with Native L&F", State.UNCHECKED);
+	quadristateCheck.setEnabled(false);
+	frame.getContentPane().add(quadristateCheck);
+	final JCheckBox normalCheck = new JCheckBox("Normal Checkbox with Native L&F");
+	normalCheck.setEnabled(false);
+	frame.getContentPane().add(normalCheck);
+	// wait for 3 seconds, then enable all check boxes
+	new Thread() {
+	    @Override
+	    public void run() {
+		try {
+		    Thread.sleep(3000);
+		    swingQuadristateBox.setEnabled(true);
+		    swingNormalBox.setEnabled(true);
+		    quadristateCheck.setEnabled(true);
+		    normalCheck.setEnabled(true);
+		} catch (InterruptedException ex) {
+		}
+	    }
+	}.start();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.pack();
+	frame.setVisible(true);
+    }
 
 }

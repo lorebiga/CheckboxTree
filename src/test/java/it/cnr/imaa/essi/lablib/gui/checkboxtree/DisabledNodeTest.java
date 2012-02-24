@@ -29,55 +29,51 @@ import javax.swing.tree.TreePath;
  */
 public class DisabledNodeTest extends JFrame {
 
-	public DisabledNodeTest() {
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(300, 600);
-		javax.swing.JPanel jContentPane = new JPanel();
-		jContentPane.setLayout(new BorderLayout());
-		jContentPane.add(getCheckboxTree(), BorderLayout.CENTER);
-		this.setContentPane(jContentPane);
-		this.setTitle("CheckboxTree");
-	}
+    public DisabledNodeTest() {
+	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	this.setSize(300, 600);
+	javax.swing.JPanel jContentPane = new JPanel();
+	jContentPane.setLayout(new BorderLayout());
+	jContentPane.add(getCheckboxTree(), BorderLayout.CENTER);
+	this.setContentPane(jContentPane);
+	this.setTitle("CheckboxTree");
+    }
 
-	/**
-	 * Create the tree. Check one node. Disables it.
-	 */
-	private JScrollPane getCheckboxTree() {
-		final CheckboxTree checkboxTree = new CheckboxTree();
-		System.out.println(checkboxTree.toString());
-		checkboxTree.getCheckingModel().setCheckingMode(
-				TreeCheckingModel.CheckingMode.PROPAGATE);
-		checkboxTree.setRootVisible(true);
-		checkboxTree.setEnabled(true);
-		checkboxTree.expandAll();
+    /**
+     * Create the tree. Check one node. Disables it.
+     */
+    private JScrollPane getCheckboxTree() {
+	final CheckboxTree checkboxTree = new CheckboxTree();
+	System.out.println(checkboxTree.toString());
+	checkboxTree.getCheckingModel().setCheckingMode(TreeCheckingModel.CheckingMode.PROPAGATE);
+	checkboxTree.setRootVisible(true);
+	checkboxTree.setEnabled(true);
+	checkboxTree.expandAll();
 
-		DefaultMutableTreeNode mn = (DefaultMutableTreeNode) checkboxTree
-				.getModel().getRoot();
-		mn = (DefaultMutableTreeNode) mn.getChildAt(2);
-		mn = (DefaultMutableTreeNode) mn.getChildAt(2);
-		TreePath path = new TreePath(mn.getPath());
-		System.out.println("row number: " + checkboxTree.getRowForPath(path));
-		checkboxTree.addCheckingPath(path);
-		checkboxTree.getCheckingModel().setPathEnabled(path, false);
+	DefaultMutableTreeNode mn = (DefaultMutableTreeNode) checkboxTree.getModel().getRoot();
+	mn = (DefaultMutableTreeNode) mn.getChildAt(2);
+	mn = (DefaultMutableTreeNode) mn.getChildAt(2);
+	TreePath path = new TreePath(mn.getPath());
+	System.out.println("row number: " + checkboxTree.getRowForPath(path));
+	checkboxTree.addCheckingPath(path);
+	checkboxTree.getCheckingModel().setPathEnabled(path, false);
 
-		checkboxTree.addTreeCheckingListener(new TreeCheckingListener() {
-			public void valueChanged(TreeCheckingEvent e) {
-				System.out.println("checking set changed, leading path: "
-						+ ((TreeNode) e.getPath().getLastPathComponent())
-								.toString());
-				System.out.println("checking roots: ");
-				TreePath[] cr = checkboxTree.getCheckingRoots();
-				for (TreePath path : cr) {
-					System.out.println(path.getLastPathComponent());
-				}
-			}
-		});
-		return new JScrollPane(checkboxTree);
-	}
+	checkboxTree.addTreeCheckingListener(new TreeCheckingListener() {
+	    public void valueChanged(TreeCheckingEvent e) {
+		System.out.println("checking set changed, leading path: " + ((TreeNode) e.getPath().getLastPathComponent()).toString());
+		System.out.println("checking roots: ");
+		TreePath[] cr = checkboxTree.getCheckingRoots();
+		for (TreePath path : cr) {
+		    System.out.println(path.getLastPathComponent());
+		}
+	    }
+	});
+	return new JScrollPane(checkboxTree);
+    }
 
-	public static void main(String[] args) {
-		DisabledNodeTest test = new DisabledNodeTest();
-		test.setVisible(true);
-	}
+    public static void main(String[] args) {
+	DisabledNodeTest test = new DisabledNodeTest();
+	test.setVisible(true);
+    }
 
 }
