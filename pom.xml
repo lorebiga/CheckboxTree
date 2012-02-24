@@ -11,7 +11,7 @@
     <parent>
         <groupId>eu.floraresearch</groupId>
         <artifactId>lablib-pom</artifactId>
-        <version>6.0</version>
+        <version>6.1.1</version>
         <relativePath>../lablib-pom/pom.xml</relativePath>
     </parent>
 
@@ -129,7 +129,7 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:https://ulisse.pin.unifi.it/svn-krb/lablib/trunk/lablib-checkboxtree</connection>
+        <connection>scm:svn:https://ulisse.pin.unifi.it/svn-krb/lablib/lablib-checkboxtree/trunk</connection>
     </scm>
 
 </project>
