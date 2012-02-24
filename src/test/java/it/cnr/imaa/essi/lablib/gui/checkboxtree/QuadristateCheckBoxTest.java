@@ -13,7 +13,6 @@
  */
 package it.cnr.imaa.essi.lablib.gui.checkboxtree;
 
-import it.cnr.imaa.essi.lablib.gui.checkboxtree.QuadristateCheckbox;
 import it.cnr.imaa.essi.lablib.gui.checkboxtree.QuadristateButtonModel.State;
 
 import java.awt.GridLayout;

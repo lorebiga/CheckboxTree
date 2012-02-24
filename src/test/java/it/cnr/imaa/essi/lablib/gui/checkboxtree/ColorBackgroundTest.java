@@ -22,35 +22,22 @@ import javax.swing.tree.TreeNode;
 /**
  * @author boldrini
  */
-public class HandlesTest extends DefaultTreeModel {
+public class ColorBackgroundTest extends DefaultTreeModel {
+
+    /**
+     * @param root
+     */
+    public ColorBackgroundTest(TreeNode root) {
+	super(root);
+    }
+
+    static final DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
 
     static final DefaultMutableTreeNode aChild = new DefaultMutableTreeNode("child A");
 
     static final DefaultMutableTreeNode bChild = new DefaultMutableTreeNode("child B");
 
-    static final DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
-
-    public static void main(String[] args) {
-	final CheckboxTree tree = new CheckboxTree();
-	final DefaultTreeModel model = new HandlesTest(root);
-	root.add(aChild);
-	aChild.add(bChild);
-	tree.setModel(model);
-	JFrame frame = new JFrame();
-	frame.add(new JScrollPane(tree));
-	frame.setSize(300, 600);
-	frame.setVisible(true);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
     // static public boolean changed = false;
-
-    /**
-     * @param root
-     */
-    public HandlesTest(TreeNode root) {
-	super(root);
-    }
 
     @Override
     public boolean isLeaf(Object node) {
@@ -61,5 +48,18 @@ public class HandlesTest extends DefaultTreeModel {
 	// return false;
 	// }
 	return false;
+    }
+
+    public static void main(String[] args) {
+	final CheckboxTree tree = new CheckboxTree();
+	final DefaultTreeModel model = new ColorBackgroundTest(root);
+	root.add(aChild);
+	aChild.add(bChild);
+	tree.setModel(model);
+	JFrame frame = new JFrame();
+	frame.add(new JScrollPane(tree));
+	frame.setSize(300, 600);
+	frame.setVisible(true);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
