@@ -13,16 +13,46 @@
  */
 package it.cnr.imaa.essi.lablib.gui.checkboxtree;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
 /**
- * @author boldrini
+ * A test to see if the tree background works properly.
+ * Changing tree.setOpaque(true); to false should toggle the background to green to red.
+ * 
+ * @author bigagli
  */
 public class ColorBackgroundTest extends DefaultTreeModel {
+
+    static final DefaultMutableTreeNode aChild = new DefaultMutableTreeNode("child A");
+
+    static final DefaultMutableTreeNode bChild = new DefaultMutableTreeNode("child B");
+
+    static final DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
+
+    public static void main(String[] args) {
+	CheckboxTree tree = new CheckboxTree();
+	DefaultTreeModel model = new ColorBackgroundTest(root);
+	root.add(aChild);
+	aChild.add(bChild);
+	tree.setModel(model);
+	
+	JFrame frame = new JFrame();
+	frame.add(tree);
+	tree.setOpaque(true);
+	tree.setBackground(new Color(0, 255, 0));
+	frame.setSize(300, 300);
+
+	Color color = new Color(255, 0, 0);
+	frame.setBackground(color);
+
+	frame.setVisible(true);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
     /**
      * @param root
@@ -31,35 +61,4 @@ public class ColorBackgroundTest extends DefaultTreeModel {
 	super(root);
     }
 
-    static final DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
-
-    static final DefaultMutableTreeNode aChild = new DefaultMutableTreeNode("child A");
-
-    static final DefaultMutableTreeNode bChild = new DefaultMutableTreeNode("child B");
-
-    // static public boolean changed = false;
-
-    @Override
-    public boolean isLeaf(Object node) {
-	// if (changed == false & node == bChild) {
-	// return true;
-	// }
-	// if (changed == true & node == bChild) {
-	// return false;
-	// }
-	return false;
-    }
-
-    public static void main(String[] args) {
-	final CheckboxTree tree = new CheckboxTree();
-	final DefaultTreeModel model = new ColorBackgroundTest(root);
-	root.add(aChild);
-	aChild.add(bChild);
-	tree.setModel(model);
-	JFrame frame = new JFrame();
-	frame.add(new JScrollPane(tree));
-	frame.setSize(300, 600);
-	frame.setVisible(true);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
 }

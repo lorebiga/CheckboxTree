@@ -74,17 +74,25 @@ public class DefaultCheckboxTreeCellRenderer extends JPanel implements CheckboxT
     // }
 
     public DefaultCheckboxTreeCellRenderer() {
+	/* this method was as follows (see ticket #6):
+	 * 
+	 * this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+	 * add(this.checkBox);
+	 * add(this.label);
+	 * this.checkBox.setBackground(UIManager.getColor("Tree.textBackground"));
+	 * this.setBackground(UIManager.getColor("Tree.textBackground")); 
+	 */
+
+	// CHECK: a user suggested BorderLayout appears to work better than FlowLayout with most L&Fs
 	this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 	this.setOpaque(false);
 	add(this.checkBox);
 	add(this.label);
 
-	// this method was as follows (see ticket #6):
-	// this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-	// add(this.checkBox);
-	// add(this.label);
-	// this.checkBox.setBackground(UIManager.getColor("Tree.textBackground"));
-	// this.setBackground(UIManager.getColor("Tree.textBackground"));
+	/*
+	 * label.setOpaque(false); seems not work...
+	 */
+	label.setBackgroundNonSelectionColor(new Color(0, 0, 0, 0));
     }
 
     @Override

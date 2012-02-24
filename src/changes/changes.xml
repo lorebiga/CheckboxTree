@@ -6,13 +6,13 @@
 		<title>CheckboxTree Changes</title>
 	</properties>
 	<body>
-		<!--
-			<release version="4.0-SNAPSHOT" date="in SVN"> <action dev="Lorenzo
-			Bigagli" type="update">POM update</action>
-		-->
-		<!--		</release>-->
-		<release version="3.3" date="in SVN">
+		<!-- <release version="4.0-SNAPSHOT" date="in SVN"> <action dev="Lorenzo 
+			Bigagli" type="update">POM update</action> -->
+		<!-- </release> -->
+		<release version="3.3" date="2012-02-24">
 			<action dev="Lorenzo Bigagli" type="update">POM update</action>
+			<action dev="Lorenzo Bigagli" type="fix">DefaultCheckboxTreeCellRenderer
+				should be transparent (see ticket #17)</action>
 		</release>
 		<release version="3.2" date="2010-06-11">
 			<action dev="Lorenzo Bigagli" type="update">POM update</action>
