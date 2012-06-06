@@ -15,14 +15,19 @@ package it.cnr.imaa.essi.lablib.gui.checkboxtree;
 
 import javax.swing.JFrame;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 
 /**
- * A test tree whose nodes have no icons.
+ * A test tree to highlight the root visibility behavior.
+ * 
+ * JTree keeps the root in the "not-expanded" state, if it doesn't contain anything 
+ * at the time of its insertion in the tree model.
+ * Hence, even if nodes are inserted afterwards, they are not rendered in the tree UI.
+ * If the root itself is hidden, the tree UI is empty altogether.
  * 
  * @author bigagli
  */
-public class NoIconsTest {
+public class RootVisibilityTest {
 
     static final DefaultMutableTreeNode aChild = new DefaultMutableTreeNode("child A");
 
@@ -31,21 +36,19 @@ public class NoIconsTest {
     static final DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
 
     public static void main(String[] args) {
-	CheckboxTree tree = new CheckboxTree();
-	DefaultCheckboxTreeCellRenderer dtcr = new DefaultCheckboxTreeCellRenderer();
-	dtcr.setLeafIcon(null);
-	dtcr.setOpenIcon(null);
-	dtcr.setClosedIcon(null);
-	tree.setCellRenderer(dtcr);
-	DefaultTreeModel model = new DefaultTreeModel(root);
+	// since it is a leaf node, the root is not expanded by the underlying JTree...
+	CheckboxTree tree = new CheckboxTree(root);
+	// ... adding children to the root does not modify it being not expanded...
 	root.add(aChild);
 	aChild.add(bChild);
-	tree.setModel(model);
-	
+	// ... the root is not expanded and invisible: the tree is empty
+	tree.setRootVisible(false);
+	// a solution is to force the root expansion; another option is to add the root to the tree after it's been populated
+	tree.expandPath(new TreePath(root));
+
 	JFrame frame = new JFrame();
 	frame.add(tree);
 	frame.setSize(300, 300);
-
 	frame.setVisible(true);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
