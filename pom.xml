@@ -11,7 +11,7 @@
     <parent>
         <groupId>eu.floraresearch</groupId>
         <artifactId>lablib-pom</artifactId>
-        <version>7.0-beta-2</version>
+        <version>7.0</version>
         <relativePath>../lablib-pom/pom.xml</relativePath>
     </parent>
 
