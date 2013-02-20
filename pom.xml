@@ -123,13 +123,13 @@
 
     <distributionManagement>
         <site>
-            <id>zeus-dav</id>
+            <id>site-dav</id>
             <url>dav:${project.url}</url>
         </site>
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:https://ulisse.pin.unifi.it/svn/lablib/lablib-checkboxtree/trunk</connection>
+        <connection>scm:svn:https://essi-lab.eu/svn/lablib/lablib-checkboxtree/trunk</connection>
     </scm>
 
 </project>
