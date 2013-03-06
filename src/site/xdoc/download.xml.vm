@@ -12,7 +12,7 @@
                     <pre>
 &lt;repository&gt;
     &lt;name&gt;ESSI-Lab repository&lt;/name&gt;
-    &lt;url&gt;http://ulisse.pin.unifi.it:8081/nexus/content/groups/open.repos&lt;/url&gt;
+    &lt;url&gt;http://essi-lab.eu/nexus/content/groups/open.repos&lt;/url&gt;
     &lt;releases&gt;
         &lt;enabled&gt;true&lt;/enabled&gt;
     &lt;/releases&gt;
@@ -35,7 +35,7 @@
             </subsection>
             <subsection name="Direct download">
                 <p>To directly browse our repository manager for old and/or unreleased (snapshot) versions, visit <a
-                        href="http://ulisse.pin.unifi.it:8081/nexus/index.html#nexus-search;classname~checkboxtree"
+                        href="http://essi-lab.eu/nexus/index.html#nexus-search;classname~checkboxtree"
                         >this page</a>.</p>
             </subsection>
         </section>
