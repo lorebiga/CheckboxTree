@@ -31,7 +31,7 @@
             <p>The CheckboxTree in action.</p>
 
             <applet
-                code="it.cnr.imaa.essi.lablib.gui.checkboxtree.examples.CheckboxTreeApplet.class"
+                code="eu.floraresearch.lablib.gui.checkboxtree.examples.CheckboxTreeApplet.class"
                 width="640" height="480"
                 archive="http://ulisse.pin.unifi.it:8081/nexus/service/local/artifact/maven/redirect?r=lab.open.rel&#38;g=${project.groupId}&#38;a=${project.artifactId}&#38;v=${project.version}&#38;p=${project.packaging}"
             />

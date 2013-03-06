@@ -3,9 +3,8 @@
 
     <!-- CheckboxTree POM -->
     <artifactId>lablib-checkboxtree</artifactId>
-    <version>3.4-SNAPSHOT</version>
+    <version>4.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <groupId>it.cnr.imaa.essi</groupId>
 
     <!-- POM Relationships -->
     <parent>
@@ -30,7 +29,7 @@
     
     <issueManagement>
         <system>trac</system>
-        <url>https://ulisse.pin.unifi.it/trac/lablib-checkboxtree</url>
+        <url>https://essi-lab.eu/trac/lablib-checkboxtree</url>
     </issueManagement>
 
     <licenses>
@@ -46,23 +45,21 @@
         <developer>
             <id>bigagli</id>
             <name>Lorenzo Bigagli</name>
-            <email>bigagli@imaa.cnr.it</email>
+            <email>lorenzo.bigagli@cnr.it</email>
             <roles>
                 <role>Project Manager</role>
                 <role>Architect</role>
             </roles>
-            <organization>IMAA-CNR</organization>
             <timezone>+1</timezone>
         </developer>
         <developer>
             <id>boldrini</id>
             <name>Enrico Boldrini</name>
-            <email>boldrini@imaa.cnr.it</email>
+            <email>enrico.boldrini@cnr.it</email>
             <roles>
                 <role>Project Manager</role>
                 <role>Architect</role>
             </roles>
-            <organization>IMAA-CNR</organization>
             <timezone>+1</timezone>
         </developer>
     </developers>
@@ -79,11 +76,11 @@
         </contributor>
         <contributor>
             <name>Fabrizio Papeschi</name>
-            <email>papeschi@imaa.cnr.it</email>
+            <email>fabrizio.papeschi@cnr.it</email>
             <roles>
                 <role>user</role>
             </roles>
-            <organization>IMAA-CNR (Italy)</organization>
+            <organization>CNR (Italy)</organization>
             <timezone>+1</timezone>
         </contributor>
         <contributor>

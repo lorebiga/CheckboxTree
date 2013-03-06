@@ -9,10 +9,12 @@
 		<!-- <release version="4.0-SNAPSHOT" date="in SVN"> <action dev="Lorenzo 
 			Bigagli" type="update">POM update</action> -->
 		<!-- </release> -->
-		<release version="3.4-SNAPSHOT" date="in SVN">
-			<action dev="Lorenzo Bigagli" type="update">POM update</action>
+		<release version="4.0-SNAPSHOT" date="in SVN">
+			<action dev="Lorenzo Bigagli" type="update">parent POM update</action>
 			<action dev="Lorenzo Bigagli" type="update">target upgraded to Java 1.6</action>
-			<action dev="Lorenzo Bigagli" type="update">SVN and DAV settings</action>
+			<action dev="Lorenzo Bigagli" type="update">SVN, trac and DAV settings</action>
+			<action dev="Lorenzo Bigagli" type="update">groupId</action>
+			<action dev="Lorenzo Bigagli" type="update">Java package hierarchy</action>
 		</release>
 		<release version="3.3" date="2012-02-24">
 			<action dev="Lorenzo Bigagli" type="update">POM update</action>
