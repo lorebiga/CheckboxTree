@@ -35,7 +35,7 @@
   	</head>
   
     <links>
-      <item name="ESSI-Lab" href="http://zeus.pin.unifi.it/"/>
+      <item name="ESSI-Lab" href="http://www.essi-lab.eu/"/>
     </links>
     <menu name="${project.name}">
       <item name="Introduction" href="index.html"/>
