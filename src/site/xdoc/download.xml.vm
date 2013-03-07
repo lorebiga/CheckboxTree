@@ -7,7 +7,7 @@
     <body>
         <section name="${project.name} Download">
             <subsection name="Download with maven">
-                <p>If you use Maven 2 for your build, simply add this repository to you POM:</p>
+                <p>If you build with Maven 2, simply add this repository to you POM:</p>
                 <source>
                     <pre>
 &lt;repository&gt;
@@ -22,7 +22,7 @@
 &lt;/repository&gt;
 </pre>
                 </source>
-                <p>and then add this dependency:</p>
+                <p>Then add this dependency:</p>
                 <source>
                     <pre>
 &lt;dependency&gt;
@@ -34,7 +34,7 @@
                 </source>
             </subsection>
             <subsection name="Direct download">
-                <p>To directly browse our repository manager for old and/or unreleased (snapshot) versions, visit <a
+                <p>To directly browse our repository for old and/or unreleased (snapshot) versions, visit <a
                         href="http://essi-lab.eu/nexus/index.html#nexus-search;classname~checkboxtree"
                         >this page</a>.</p>
             </subsection>

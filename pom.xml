@@ -16,12 +16,11 @@
 
     <!-- Project Information -->
     <name>CheckboxTree</name>
-    <description><![CDATA[CheckboxTree is a Java Swing component that provides a Tree with checkboxes in
-		every node. Checkboxes can toggle between two states (checked and unchecked). Disabling
-		and greying checkboxes is also supported. The CheckboxTree API design is inspired by
-		the JTree interface. In particular, the set of checked nodes is maintained by means of the TreeCheckingModel
-		interface, closely modelled after the TreeSelectionModel interface.<br />
-		For more information, see our
+    <description><![CDATA[CheckboxTree is a Java Swing component providing a tree-like widget with checkboxes in
+		each node. Checkboxes can toggle between the checked and unchecked state. Disabled
+		and greyed checkboxes are also supported. The CheckboxTree API design is inspired by
+		the JTree interface.<br />
+		For more information, see this
 		<a href="http://www.javaworld.com/javaworld/jw-09-2007/jw-09-checkboxtree.html">JavaWorld article</a>.
 		]]>
     </description>

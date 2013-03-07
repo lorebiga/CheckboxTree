@@ -39,7 +39,7 @@
     </links>
     <menu name="${project.name}">
       <item name="Introduction" href="index.html"/>
-      <item name="Issue tracking" href="${project.issueManagement.url}"/>
+      <item name="Issue tracker" href="${project.issueManagement.url}"/>
       <item name="Download" href="download.html"/>
       <item name="Make a donation" href="donate.html"/>
     </menu>

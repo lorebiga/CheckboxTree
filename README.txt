@@ -1,13 +1,13 @@
 Project Site
 ------------
-http://zeus.pin.unifi.it/projectsSites/lablib-checkboxtree/
+http://www.essi-lab.eu/projectsSites/lablib-checkboxtree/
 
 See the site for documentation, history, etc.
 Contact the authors for other information and/or licensing options.
 
 License
 -------
-Copyright 2006-2011 Enrico Boldrini <boldrini@imaa.cnr.it>, Lorenzo Bigagli <bigagli@imaa.cnr.it>
+Copyright 2007-2013 Enrico Boldrini <enrico.boldrini@cnr.it>, Lorenzo Bigagli <lorenzo.bigagli@cnr.it>
 
     This file is part of CheckboxTree.
 

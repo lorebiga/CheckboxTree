@@ -10,23 +10,25 @@
         <section name="${project.name}">
 
             <p><b>CheckboxTree ${project.version} is out!</b><br/> We actively maintain CheckboxTree and you are kindly
-                encouraged to try and comment it: your feedback (particularly on your specific
-                use-case) is highly appreciated!<br/> If you have a Bug Report, or a Requests For
-                Enhancement, visit our <a
+                encouraged to try it out: your feedback (particularly on your specific
+                use-case) is highly appreciated!
+                <br/>If you have a Bug Report or a Requests For
+                Enhancement, please visit our <a
                     href="https://essi-lab.eu/trac/lablib-checkboxtree">Issue tracker</a>
                 and pin them down!
             </p>
             <p>
                 Since its first public appearance on 09/11/2007,
                 CheckboxTree has been downloaded by about 7.000 users from 114 countries in
-                the 6 continents.<br/> 
-                <b>If you like and use CheckboxTree, please <a href="donate.html">make a donation!</a></b><br/>
-                Supporting open-source software is fair and in your interest!
+                the 6 continents.
             </p>
+            <p><b>If you like and use CheckboxTree, please <a href="donate.html">make a donation!</a></b><br/>
+                Supporting open-source software is fair and in your own interest!
+            </p>
+            
+            <img src="images/checkboxtree.jpg"/>
 
             <p>${project.description}</p>
-
-            <img src="images/checkboxtree.jpg"/>
 
             <p>The CheckboxTree in action.</p>
 
