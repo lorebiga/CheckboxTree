@@ -3,7 +3,7 @@
 
     <!-- CheckboxTree POM -->
     <artifactId>lablib-checkboxtree</artifactId>
-    <version>4.0-SNAPSHOT</version>
+    <version>4.0-beta-1</version>
     <packaging>jar</packaging>
 
     <!-- POM Relationships -->
@@ -125,7 +125,7 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:https://essi-lab.eu/svn/lablib/lablib-checkboxtree/trunk</connection>
+        <connection>scm:svn:https://essi-lab.eu/svn/lablib/lablib-checkboxtree/tags/lablib-checkboxtree-4.0-beta-1</connection>
     </scm>
 
 </project>
