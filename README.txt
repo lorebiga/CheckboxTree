@@ -7,7 +7,7 @@ Contact the authors for other information and/or licensing options.
 
 License
 -------
-Copyright 2007-2013 Enrico Boldrini <enrico.boldrini@cnr.it>, Lorenzo Bigagli <lorenzo.bigagli@cnr.it>
+Copyright 2007-2015 Enrico Boldrini <enrico.boldrini@cnr.it>, Lorenzo Bigagli <lorenzo.bigagli@cnr.it>
 
     This file is part of CheckboxTree.
 
