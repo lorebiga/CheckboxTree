@@ -256,4 +256,10 @@ public class NullTreeCheckingModel implements TreeCheckingModel {
 	// nothing to do (cf. the Null Object pattern)
     }
 
+   public void setCheckingMode(TreeCheckingMode mode)
+    {
+      // nothing to do (cf. the Null Object pattern)
+      
+    }
+
 }

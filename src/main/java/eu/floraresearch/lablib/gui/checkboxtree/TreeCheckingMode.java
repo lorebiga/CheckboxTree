@@ -33,7 +33,7 @@ public abstract class TreeCheckingMode {
     // TODO: implementare Strategy in questo modo: TreeCheckingMode class
     // interna al TreeCheckingModel, con un metodo getModel() protetto,
     // utile alle sottoclassi
-    TreeCheckingMode(DefaultTreeCheckingModel model) {
+    public TreeCheckingMode(DefaultTreeCheckingModel model) {
 	this.model = model;
     }
 

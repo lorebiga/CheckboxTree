@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreePath;
 
 import eu.floraresearch.lablib.gui.checkboxtree.QuadristateButtonModel.State;
@@ -107,32 +108,48 @@ public class DefaultCheckboxTreeCellRenderer extends JPanel implements CheckboxT
      * Decorates this renderer based on the passed in components.
      */
     public Component getTreeCellRendererComponent(JTree tree, Object object, boolean selected, boolean expanded, boolean leaf, int row,
-	    boolean hasFocus) {
-	/*
-	 * most of the rendering is delegated to the wrapped
-	 * DefaultTreeCellRenderer, the rest depends on the TreeCheckingModel
-	 */
-	this.label.getTreeCellRendererComponent(tree, object, selected, expanded, leaf, row, hasFocus);
-	if (tree instanceof CheckboxTree) {
-	    TreePath path = tree.getPathForRow(row);
-	    TreeCheckingModel checkingModel = ((CheckboxTree) tree).getCheckingModel();
-	    this.checkBox.setEnabled(checkingModel.isPathEnabled(path) && tree.isEnabled());
-	    boolean checked = checkingModel.isPathChecked(path);
-	    boolean greyed = checkingModel.isPathGreyed(path);
-	    if (checked && !greyed) {
-		this.checkBox.setState(State.CHECKED);
-	    }
-	    if (!checked && greyed) {
-		this.checkBox.setState(State.GREY_UNCHECKED);
-	    }
-	    if (checked && greyed) {
-		this.checkBox.setState(State.GREY_CHECKED);
-	    }
-	    if (!checked && !greyed) {
-		this.checkBox.setState(State.UNCHECKED);
-	    }
-	}
-	return this;
+          boolean hasFocus) {
+      /*
+       * most of the rendering is delegated to the wrapped
+       * DefaultTreeCellRenderer, the rest depends on the TreeCheckingModel
+       */
+      /*
+       *	If node is derived from TreeNodeObject, test if the GetTreeCellRendererComponent is managed by the node or not
+       *  If managed by the node, return the node component instead otherwise, returns the default one
+       */
+      final Component component=(object instanceof TreeNodeObject)?((TreeNodeObject)object).getTreeCellRendererComponent(tree, (TreeCellRenderer)this, label, selected, expanded, leaf, row, hasFocus):null;
+      if(component==null) { 
+        if(!(object instanceof TreeNodeObject)) this.label.getTreeCellRendererComponent(tree, object, selected, expanded, leaf, row, hasFocus);
+        if (tree instanceof CheckboxTree) {
+          TreePath path = tree.getPathForRow(row);
+          TreeCheckingModel checkingModel = ((CheckboxTree) tree).getCheckingModel();
+          /*
+           * Has feature each node check can be checked or not, if it cannot be checked, hide checkbox
+           */
+          if(object instanceof TreeNodeObject && ((TreeNodeObject)object).canBeChecked()==false) {
+            this.checkBox.setVisible(false);
+          }
+          else {
+            this.checkBox.setVisible(true);
+            this.checkBox.setEnabled(checkingModel.isPathEnabled(path) && tree.isEnabled() && (!(object instanceof TreeNodeObject) || ((TreeNodeObject)object).isEnabled()));
+            boolean checked = checkingModel.isPathChecked(path);
+            boolean greyed = checkingModel.isPathGreyed(path);
+            if (checked && !greyed) {
+              this.checkBox.setState(State.CHECKED);
+            }
+            if (!checked && greyed) {
+              this.checkBox.setState(State.GREY_UNCHECKED);
+            }
+            if (checked && greyed) {
+              this.checkBox.setState(State.GREY_CHECKED);
+            }
+            if (!checked && !greyed) {
+              this.checkBox.setState(State.UNCHECKED);
+            }
+          }
+        }
+      }
+      return component==null?this:component;
     }
 
     /**
