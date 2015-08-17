@@ -183,6 +183,7 @@ public interface TreeCheckingModel {
      *            the checking mode to set.
      */
     public void setCheckingMode(CheckingMode mode);
+    public void setCheckingMode(TreeCheckingMode mode);
 
     /**
      * (Re)sets the checking to the specified path.
