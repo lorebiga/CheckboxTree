@@ -124,8 +124,8 @@
         </site>
     </distributionManagement>
 
-    <scm>
+    <!-- <scm>
         <connection>scm:svn:https://essi-lab.eu/svn/lablib/lablib-checkboxtree/trunk</connection>
-    </scm>
+    </scm> -->
 
 </project>
