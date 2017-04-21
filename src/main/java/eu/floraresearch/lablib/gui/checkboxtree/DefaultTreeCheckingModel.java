@@ -169,11 +169,11 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel {
 	}
     }
 
-    void addToCheckedPathsSet(TreePath path) {
+    public void addToCheckedPathsSet(TreePath path) {
 	this.checkedPathsSet.add(path);
     }
 
-    void addToGreyedPathsSet(TreePath path) {
+    public void addToGreyedPathsSet(TreePath path) {
 	this.greyedPathsSet.add(path);
     }
 
@@ -195,6 +195,8 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel {
      *            root of the tree to be checked
      */
     public void checkSubTree(final TreePath path) {
+    // Is node enabled or not, if not don't manage its subtree
+	if(path.getLastPathComponent() instanceof TreeNodeObject  && (((TreeNodeObject)path.getLastPathComponent()).canBeChecked()==false || ((TreeNodeObject)path.getLastPathComponent()).isEnabled()==false)) return;
 	addToCheckedPathsSet(path);
 	removeFromGreyedPathsSet(path);
 	Object node = path.getLastPathComponent();
@@ -338,7 +340,7 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel {
      *            the parent path
      * @return the array of children path
      */
-    protected TreePath[] getChildrenPath(TreePath path) {
+    public TreePath[] getChildrenPath(TreePath path) {
 	Object node = path.getLastPathComponent();
 	int childrenNumber = this.model.getChildCount(node);
 	TreePath[] childrenPath = new TreePath[childrenNumber];
@@ -402,7 +404,7 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel {
      * @param value
      *            the value to be found.
      */
-    protected boolean pathHasChildrenWithValue(TreePath path, boolean value) {
+    public boolean pathHasChildrenWithValue(TreePath path, boolean value) {
 	Object node = path.getLastPathComponent();
 	int childrenNumber = this.model.getChildCount(node);
 	for (int childIndex = 0; childIndex < childrenNumber; childIndex++) {
@@ -464,11 +466,11 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel {
 	}
     }
 
-    void removeFromCheckedPathsSet(TreePath path) {
+    public void removeFromCheckedPathsSet(TreePath path) {
 	this.checkedPathsSet.remove(path);
     }
 
-    void removeFromGreyedPathsSet(TreePath path) {
+    public void removeFromGreyedPathsSet(TreePath path) {
 	this.greyedPathsSet.remove(path);
     }
 
@@ -709,7 +711,7 @@ public class DefaultTreeCheckingModel implements TreeCheckingModel {
      * @param ancestor
      *            the path to be grey-updated.
      */
-    protected void updatePathGreyness(TreePath ancestor) {
+    public void updatePathGreyness(TreePath ancestor) {
 	boolean value = isPathChecked(ancestor);
 	Object ancestorNode = ancestor.getLastPathComponent();
 	int childrenNumber = this.model.getChildCount(ancestorNode);

@@ -343,38 +343,42 @@ public class CheckboxTree extends JTree {
 	return selectsByChecking;
     }
 
-    /*
-     * This is overridden to work around an AWT limitation (see the comment
-     * inside initialize()). Basically, if a mouse_pressed event insists on a
-     * checkbox control _and_ we don't want the node to be selected, we stop
-     * processing the event. Simply consuming the event wouldn't work, because
-     * the BasicTreeUI would select the node on the mouse_released event!
-     * 
-     * @see javax.swing.JComponent#processMouseEvent(java.awt.event.MouseEvent)
-     */
+  /*
+   * This is overridden to work around an AWT limitation (see the comment inside initialize()).
+   * Basically, if a mouse_pressed event insists on a checkbox control _and_ we don't want the node
+   * to be selected, we stop processing the event. Simply consuming the event wouldn't work, because
+   * the BasicTreeUI would select the node on the mouse_released event!
+   * 
+   * @see javax.swing.JComponent#processMouseEvent(java.awt.event.MouseEvent)
+   */
     @Override
     protected void processMouseEvent(MouseEvent e) {
-	if (e.getID() == MouseEvent.MOUSE_PRESSED) {
-	    // we use mousePressed instead of mouseClicked for performance
-	    if (!e.isConsumed() && this.isEnabled()) {
-		int x = e.getX();
-		int y = e.getY();
-		int row = getRowForLocation(x, y);
-		if (row != -1) {
-		    // click inside some node
-		    Rectangle rect = getRowBounds(row);
-		    if (rect != null) {
-			// click on a valid node
-			if ((getCellRenderer()).isOnHotspot(x - rect.x, y - rect.y)) {
-			    getCheckingModel().toggleCheckingPath(getPathForRow(row));
-			    if (!isSelectsByChecking())
-				return;
-			}
-		    }
-		}
-	    }
-	}
-	super.processMouseEvent(e);
+      if (e.getID() == MouseEvent.MOUSE_PRESSED) {
+        // we use mousePressed instead of mouseClicked for performance
+        if (!e.isConsumed() && this.isEnabled()) {
+          int x = e.getX();
+          int y = e.getY();
+          int row = getRowForLocation(x, y);
+          if (row != -1) {
+            // click inside some node
+            Rectangle rect = getRowBounds(row);
+            if (rect != null) {
+              // click on a valid node
+              if ((getCellRenderer()).isOnHotspot(x - rect.x, y - rect.y)) {
+                // Check that the path can be definitivly checked & is valid
+                TreePath path=this.getPathForLocation(x, y);
+                if(path!=null && path.getPath()!=null && path.getPath().length!=0 && path.getPath()[path.getPath().length-1] instanceof TreeNodeObject && (((TreeNodeObject)path.getPath()[path.getPath().length-1]).canBeChecked()==false || ((TreeNodeObject)path.getPath()[path.getPath().length-1]).isEnabled()==false)) {}
+                else {
+                  getCheckingModel().toggleCheckingPath(getPathForRow(row));
+                  if (!isSelectsByChecking())
+                    return;
+                }
+              }
+            }
+          }
+        }
+      }
+      super.processMouseEvent(e);
     }
 
     /**
@@ -455,8 +459,9 @@ public class CheckboxTree extends JTree {
 	    }
 	    // add a treeCheckingListener to repaint upon checking modifications
 	    newCheckingModel.addTreeCheckingListener(new TreeCheckingListener() {
-		public void valueChanged(TreeCheckingEvent e) {
-		    repaint();
+        public void valueChanged(TreeCheckingEvent e)
+        {
+          CheckboxTree.this.repaint();
 		}
 	    });
 	} else {
