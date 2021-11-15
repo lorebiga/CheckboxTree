@@ -8,10 +8,19 @@
 	<version>4.0-beta-2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
+<<<<<<< HEAD
 	<!-- POM Relationships -->
 	<!-- <parent> <groupId>eu.floraresearch</groupId> <artifactId>lablib-pom</artifactId> 
 		<version>8.0</version> <relativePath>../lablib-pom/pom.xml</relativePath> 
 		</parent> -->
+=======
+    <!-- POM Relationships -->
+    <parent>
+        <groupId>eu.floraresearch</groupId>
+        <artifactId>lablib-pom</artifactId>
+        <version>8.0</version>
+    </parent>
+>>>>>>> 7c777fbf2b8ad05737e4ff5b8bb212f962b92c2b
 
 	<!-- Project Information -->
 	<name>CheckboxTree</name>
