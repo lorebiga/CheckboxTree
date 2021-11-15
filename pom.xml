@@ -9,12 +9,6 @@
 	<version>4.0-beta-2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<!-- POM Relationships -->
-	<!-- <parent> <groupId>eu.floraresearch</groupId> <artifactId>lablib-pom</artifactId> 
-		<version>8.0</version> <relativePath>../lablib-pom/pom.xml</relativePath> 
-		</parent> -->
-	<!-- POM Relationships -->
-
 	<!-- Project Information -->
 	<name>CheckboxTree</name>
 	<description><![CDATA[CheckboxTree is a Java Swing component providing a tree-like widget with checkboxes in
@@ -182,15 +176,8 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		
+
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
 			<!-- changes.xml validation -->
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-changes-plugin</artifactId> 
 				<executions> <execution> <id>validate-changes</id> <phase>pre-site</phase> 
@@ -286,15 +273,23 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
 			<!-- generate sources jar too -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>Super POM attach-sources</id>
+						<id>attach-sources</id>
+						<phase>verify</phase>
 						<goals>
-							<goal>jar</goal>
+							<goal>jar-no-fork</goal>
 						</goals>
 					</execution>
 				</executions>
