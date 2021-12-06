@@ -167,10 +167,6 @@
 							<artifactId>wagon-webdav-jackrabbit</artifactId>
 							<version>2.4</version>
 						</dependency>
-						<!-- the following was needed with jackrabbit 2.2 -->
-						<!-- force slf4j 1.6.x or it fails due to missing class StaticLoggerBinder -->
-						<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
-							<version>1.6.1</version> </dependency> -->
 					</dependencies>
 				</plugin>
 				<plugin>
@@ -262,7 +258,7 @@
 					<additionalparam>-Xdoclint:none</additionalparam>
 					<quiet>false</quiet>
 					<!-- ^ set this to true to silence the output -->
-					<skip>true</skip>
+					<skip>false</skip>
 					<!-- ^ set this to true to skip javadoc'ing -->
 					<!-- <minmemory>128m</minmemory> -->
 					<!-- <maxmemory>512</maxmemory> -->
@@ -424,11 +420,6 @@
 			</plugin>
 		</plugins>
 	</reporting>
-
-	<!-- <distributionManagement> <site> <id>site-dav</id> <url>dav:${project.url}</url> 
-		</site> <repository> <id>lab.private.rel</id> <url>http://essi-lab.eu/nexus/content/repositories/lab.private.rel</url> 
-		</repository> <snapshotRepository> <id>lab.private.snap</id> <url>http://essi-lab.eu/nexus/content/repositories/lab.private.snap</url> 
-		</snapshotRepository> </distributionManagement> -->
 
 	<distributionManagement>
 		<snapshotRepository>

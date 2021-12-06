@@ -41,7 +41,7 @@ import eu.floraresearch.lablib.gui.checkboxtree.TreeCheckingModel;
 
 /**
  * An example showcase for the various look and feels. There are issues with
- * dynamically changing the L&F of a CheckboxTree.
+ * dynamically changing the L&amp;F of a CheckboxTree.
  * 
  * @author bigagli
  * @author boldrini
