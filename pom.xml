@@ -271,7 +271,7 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
-						<phase>verify</phase>
+<!-- 						<phase>verify</phase> -->
 						<!-- I tried to bind it to install phase, but it ran after the install 
 							plugin, so javadocs were not installed. Declaring the install plugin after 
 							this works, but it actually runs twice: _before_ and _after_ the javadoc:jar, 
@@ -293,7 +293,7 @@
 				<executions>
 					<execution>
 						<id>attach-sources</id>
-						<phase>verify</phase>
+<!-- 						<phase>verify</phase> -->
 						<goals>
 							<goal>jar-no-fork</goal>
 						</goals>
@@ -398,6 +398,13 @@
 		</site> <repository> <id>lab.private.rel</id> <url>http://essi-lab.eu/nexus/content/repositories/lab.private.rel</url> 
 		</repository> <snapshotRepository> <id>lab.private.snap</id> <url>http://essi-lab.eu/nexus/content/repositories/lab.private.snap</url> 
 		</snapshotRepository> </distributionManagement> -->
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<!-- <scm> <connection>scm:svn:https://essi-lab.eu/svn/lablib/lablib-checkboxtree/trunk</connection> 
 		</scm> -->
