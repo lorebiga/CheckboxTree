@@ -56,14 +56,10 @@ import javax.swing.tree.TreeSelectionModel;
  * Then you can set the checking propagation style:
  * 
  * <pre>
- * CheckboxTree.getCheckingModel().setCheckingMode(
- * 		TreeCheckingModel.CheckingMode.SIMPLE);
- * CheckboxTree.getCheckingModel().setCheckingMode(
- * 		TreeCheckingModel.CheckingMode.PROPAGATE);
- * CheckboxTree.getCheckingModel().setCheckingMode(
- * 		TreeCheckingModel.CheckingMode.PROPAGATE_PRESERVING_CHECK);
- * CheckboxTree.getCheckingModel().setCheckingMode(
- * 		TreeCheckingModel.CheckingMode.PROPAGATE_PRESERVING_UNCHECK);
+ * CheckboxTree.getCheckingModel().setCheckingMode(TreeCheckingModel.CheckingMode.SIMPLE);
+ * CheckboxTree.getCheckingModel().setCheckingMode(TreeCheckingModel.CheckingMode.PROPAGATE);
+ * CheckboxTree.getCheckingModel().setCheckingMode(TreeCheckingModel.CheckingMode.PROPAGATE_PRESERVING_CHECK);
+ * CheckboxTree.getCheckingModel().setCheckingMode(TreeCheckingModel.CheckingMode.PROPAGATE_PRESERVING_UNCHECK);
  * </pre>
  * 
  * You can also set the model at a later time using:
@@ -84,10 +80,9 @@ import javax.swing.tree.TreeSelectionModel;
  * 
  * <pre>
  * CheckboxTree.addTreeCheckingListener(new TreeCheckingListener() {
- * 	public void valueChanged(TreeCheckingEvent e) {
- * 		System.out.println(&quot;Checked paths changed: user clicked on &quot;
- * 				+ (e.getLeadingPath().getLastPathComponent()));
- * 	}
+ *     public void valueChanged(TreeCheckingEvent e) {
+ * 	System.out.println(&quot;Checked paths changed: user clicked on &quot; + (e.getLeadingPath().getLastPathComponent()));
+ *     }
  * });
  * </pre>
  * 
@@ -95,6 +90,12 @@ import javax.swing.tree.TreeSelectionModel;
  * @author Lorenzo Bigagli
  */
 
+/**
+ * @author bigagli
+ */
+/**
+ * @author bigagli
+ */
 public class CheckboxTree extends JTree {
 
     /**
@@ -196,6 +197,8 @@ public class CheckboxTree extends JTree {
      * Create a CheckboxTree with visible handles, a default
      * CheckboxTreeCellRenderer and a default TreeCheckingModel. The tree is
      * based on the specified tree model.
+     *
+     * @param treemodel the model of this tree
      */
     public CheckboxTree(TreeModel treemodel) {
 	super(treemodel);
@@ -208,7 +211,7 @@ public class CheckboxTree extends JTree {
      * is the specified tree node.
      * 
      * @param root
-     *            the root of the tree
+     *        the root of the tree
      */
     public CheckboxTree(TreeNode root) {
 	super(root);
@@ -217,6 +220,8 @@ public class CheckboxTree extends JTree {
 
     /**
      * Add a path in the checking.
+     *
+     * @param path the path to add
      */
     public void addCheckingPath(TreePath path) {
 	getCheckingModel().addCheckingPath(path);
@@ -233,8 +238,8 @@ public class CheckboxTree extends JTree {
      * Add a listener for <code>TreeChecking</code> events.
      * 
      * @param tsl
-     *            the <code>TreeCheckingListener</code> that will be notified
-     *            when a node is checked
+     *        the <code>TreeCheckingListener</code> that will be notified
+     *        when a node is checked
      */
     public void addTreeCheckingListener(TreeCheckingListener tsl) {
 	this.checkingModel.addTreeCheckingListener(tsl);
@@ -327,7 +332,7 @@ public class CheckboxTree extends JTree {
      * Return true if the item identified by the path is currently checked.
      * 
      * @param path
-     *            a <code>TreePath</code> identifying a node
+     *        a <code>TreePath</code> identifying a node
      * @return true if the node is checked
      */
     public boolean isPathChecked(TreePath path) {
@@ -395,7 +400,7 @@ public class CheckboxTree extends JTree {
      * Remove a <code>TreeChecking</code> listener.
      * 
      * @param tcl
-     *            the <code>TreeCheckingListener</code> to remove
+     *        the <code>TreeCheckingListener</code> to remove
      */
     public void removeTreeCheckingListener(TreeCheckingListener tcl) {
 	this.checkingModel.removeTreeCheckingListener(tcl);
@@ -406,10 +411,10 @@ public class CheckboxTree extends JTree {
      * each cell.
      * 
      * @param tcl
-     *            the <code>TreeCellRenderer</code> that is to render each cell
+     *        the <code>TreeCellRenderer</code> that is to render each cell
      * @throws IllegalArgumentException
-     *             if the argument is not a
-     *             <code>CheckboxTreeCellRenderer</code>.
+     *         if the argument is not a
+     *         <code>CheckboxTreeCellRenderer</code>.
      */
     @Override
     public void setCellRenderer(TreeCellRenderer tcl) {
@@ -436,7 +441,7 @@ public class CheckboxTree extends JTree {
      * the checking model is set to the NullTreeCheckingModel singleton.
      * 
      * @param newCheckingModel
-     *            the new TreeCheckingModel of this CheckboxTree.
+     *        the new TreeCheckingModel of this CheckboxTree.
      */
     public void setCheckingModel(TreeCheckingModel newCheckingModel) {
 	/*
@@ -494,7 +499,7 @@ public class CheckboxTree extends JTree {
      * the selection is not affected. The default behavior is the former.
      * 
      * @param selectsByChecking
-     *            the intended behavior of checking with respect to selection.
+     *        the intended behavior of checking with respect to selection.
      */
     public void setSelectsByChecking(boolean selectsByChecking) {
 	this.selectsByChecking = selectsByChecking;

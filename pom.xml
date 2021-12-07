@@ -255,7 +255,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
-					<additionalparam>-Xdoclint:none</additionalparam>
+ 					<additionalparam>-Xdoclint:none</additionalparam>
 					<quiet>false</quiet>
 					<!-- ^ set this to true to silence the output -->
 					<skip>false</skip>
@@ -267,14 +267,15 @@
 					<!-- ^ this is used to retrieve the package-list. Sometimes it hangs 
 						forever. As below we don't need to be online. But we need the package-list 
 						to be available somewhere (TBD) -->
-					<offlineLinks>
-						<offlineLink>
-							<url>http://download.oracle.com/javase/7/docs/api/</url>
-							<!-- the path or URL to the directory containing the package-list 
-								file for the external documentation -->
-							<location>http://www.essi-lab.eu/projectsSites/lablib-pom/</location>
-						</offlineLink>
-					</offlineLinks>
+<!-- 					<offlineLinks> -->
+<!-- 						<offlineLink> -->
+<!-- 							<url>http://download.oracle.com/javase/7/docs/api/</url> -->
+<!-- 							the path or URL to the directory containing the package-list -->
+<!-- 								file for the external documentation -->
+<!-- 							<location>http://www.essi-lab.eu/projectsSites/lablib-pom/</location> -->
+<!-- 						</offlineLink> -->
+<!-- 					</offlineLinks> -->
+					<detectJavaApiLink>false</detectJavaApiLink>
 				</configuration>
 				<executions>
 					<execution>
