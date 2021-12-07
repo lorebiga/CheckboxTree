@@ -255,7 +255,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
- 					<additionalparam>-Xdoclint:none</additionalparam>
+ 					<doclint>none</doclint>
 					<quiet>false</quiet>
 					<!-- ^ set this to true to silence the output -->
 					<skip>false</skip>
