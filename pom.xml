@@ -14,8 +14,9 @@
 		and greyed checkboxes are also supported. The CheckboxTree API design is inspired by
 		the JTree interface.<br />
 		For more information, see this
-		<a href="http://www.javaworld.com/javaworld/jw-09-2007/jw-09-checkboxtree.html">JavaWorld article</a>.
+		<a href="https://www.infoworld.com/article/2077762/swing-based-tree-layouts-with-checkboxtree.html">JavaWorld article</a>.
 		]]>
+		<!-- previously http://www.javaworld.com/javaworld/jw-09-2007/jw-09-checkboxtree.html -->
     </description>
 	<url>http://www.essi-lab.eu/projectsSites/lablib-checkboxtree</url>
 

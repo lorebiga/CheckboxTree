@@ -8,27 +8,23 @@
     <body>
 
         <section name="${project.name}">
+         
+            <img src="images/checkboxtree.jpg"/>
 
-            <p><b>CheckboxTree ${project.version} is out!</b><br/> We actively maintain CheckboxTree and you are kindly
-                encouraged to try it out: your feedback (particularly on your specific
-                use-case) is highly appreciated!
-                <br/>If you have a Bug Report or a Requests For
-                Enhancement, please visit our <a
-                    href="https://essi-lab.eu/trac/lablib-checkboxtree">Issue tracker</a>
-                and pin them down!
+            <p>${project.description}</p>
+            
+            <p><b>CheckboxTree ${project.version} is out!</b><br/>
+            	Your feedback is highly appreciated: please file any Bug Report or Request For
+                Enhancement to the project <a href="${project.issueManagement.url}">Issue tracker</a>.
             </p>
             <p>
-                Since its first public appearance on 09/11/2007,
+                Since its first public appearance on 2007-09-11,
                 CheckboxTree has been downloaded by about 7.000 users from 114 countries in
                 the 6 continents.
             </p>
             <p><b>If you like and use CheckboxTree, please <a href="donate.html">make a donation!</a></b><br/>
                 Supporting open-source software is fair and in your own interest!
             </p>
-            
-            <img src="images/checkboxtree.jpg"/>
-
-            <p>${project.description}</p>
 
             <p>The CheckboxTree in action.</p>
 
@@ -39,7 +35,7 @@
             />
         </section>
 
-       <!-- <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script>
+		<!-- <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script>
         <script type="text/javascript">_uacct='UA-394405-2';urchinTracker();</script>
         -->
 

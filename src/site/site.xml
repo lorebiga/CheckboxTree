@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project xmlns="http://maven.apache.org/DECORATION/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
-  <bannerLeft>
-    <name>${project.name}</name>
-    <!-- <src>http://maven.apache.org/images/apache-maven-project.png</src>
-    <href>http://maven.apache.org/</href> -->
-  </bannerLeft>
-  <!--  <bannerRight>
-     <src>http://maven.apache.org/images/maven-small.gif</src>
-  </bannerRight> -->
-  <!--skin>
-    <groupId>org.apache.maven</groupId>
-    <artifactId>maven-classic-skin</artifactId>
-    <version>1.0</version>
-    </skin-->
-  <publishDate position="left" format="dd-MM-yyyy"/>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+	<bannerLeft>
+		<name>${project.name}</name>
+		<!-- <src>http://maven.apache.org/images/apache-maven-project.png</src> 
+			<href>http://maven.apache.org/</href> -->
+	</bannerLeft>
+	<!-- <bannerRight> <src>http://maven.apache.org/images/maven-small.gif</src> 
+		</bannerRight> -->
+	<!--skin> <groupId>org.apache.maven</groupId> <artifactId>maven-classic-skin</artifactId> 
+		<version>1.0</version> </skin -->
+	<publishDate position="left" format="dd-MM-yyyy" />
 
-  <body>
-  
-  	<head>
-  		<!-- Google Analytics stuff - begin -->
-  		<script type="text/javascript">
-  			var _gaq = _gaq || [];
-  			_gaq.push(['_setAccount', 'UA-394405-2']);
-  			_gaq.push(['_trackPageview']);
-  			(function() {
-    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-		</script>
-		<!-- Google Analytics stuff - end -->
-  	</head>
-  
-    <links>
-      <item name="ESSI-Lab" href="http://www.essi-lab.eu/"/>
-    </links>
-    <menu name="${project.name}">
-      <item name="Introduction" href="index.html"/>
-      <item name="Issue tracker" href="${project.issueManagement.url}"/>
-      <item name="Download" href="download.html"/>
-      <item name="Make a donation" href="donate.html"/>
-    </menu>
-    <menu ref="reports"/>
-  </body>
+	<body>
+
+		<head>
+			<!-- BEGIN Google Analytics stuff -->
+			<![CDATA[<script type="text/javascript">
+				var _gaq = _gaq || [];
+  				_gaq.push(['_setAccount', 'UA-394405-2']);
+  				_gaq.push(['_trackPageview']);
+  				(function() {
+    				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  				})();
+			</script>]]>
+			<!-- END Google Analytics stuff -->
+		</head>
+
+		<links>
+			<item name="ESSI-Lab" href="http://www.essi-lab.eu/" />
+		</links>
+		
+		<menu name="${project.name}">
+			<item name="Introduction" href="index.html" />
+			<item name="Issue tracker" href="${project.issueManagement.url}" />
+			<item name="Download" href="download.html" />
+			<item name="Make a donation" href="donate.html" />
+		</menu>
+		
+		<menu ref="reports" />
+		
+	</body>
+	
 </project>
