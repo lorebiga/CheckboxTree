@@ -31,8 +31,8 @@ import eu.floraresearch.lablib.gui.checkboxtree.TreeCheckingListener;
 import eu.floraresearch.lablib.gui.checkboxtree.TreeCheckingModel;
 
 /**
- * A simple example of the CheckboxTree with key listeners: 'a' for add a node
- * 'r' for remove 'SPACE' toggles the checking of the given node.
+ * A simple example of the CheckboxTree with key listeners: 'a' to add a node,
+ * 'r' to remove, 'SPACE' to toggle the checking of the given node.
  * 
  * @author bigagli
  * @author boldrini
