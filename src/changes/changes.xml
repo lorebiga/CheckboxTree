@@ -9,12 +9,13 @@
 		<!-- <release version="4.0-SNAPSHOT" date="in SVN"> <action dev="Lorenzo 
 			Bigagli" type="update">POM update</action> -->
 		<!-- </release> -->
-		<release version="4.0-beta-1" date="2013-03-06">
-			<action dev="Lorenzo Bigagli" type="update">parent POM</action>
-			<action dev="Lorenzo Bigagli" type="update">target upgraded to Java 1.6</action>
-			<action dev="Lorenzo Bigagli" type="update">SVN, trac and DAV settings</action>
+		<release version="4.0-beta-2" date="2022-08-03">
+			<action dev="Lorenzo Bigagli" type="update">project deployed to the Central Repo</action>
+			<action dev="Lorenzo Bigagli" type="update">POM revisited</action>
+			<action dev="Lorenzo Bigagli" type="update">target upgraded to Java 1.7</action>
+			<action dev="Lorenzo Bigagli" type="update">project moved to gitHub</action>
 			<action dev="Lorenzo Bigagli" type="update">groupId changed to eu.essilab</action>
-			<action dev="Lorenzo Bigagli" type="update">Java package hierarchy</action>
+			<action dev="Lorenzo Bigagli" type="update">code repackaged to eu.essilab</action>
 			<action dev="Lorenzo Bigagli" type="update">source copyright information</action>
 		</release>
 		<release version="3.3" date="2012-02-24">
