@@ -184,6 +184,11 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M5</version>
 				</plugin>
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.6.13</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 
@@ -224,7 +229,7 @@
 						<configuration>
 							<rules>
 								<requireMavenVersion>
-									<version>[3.1.1,)</version>
+									<version>[3.5.0,)</version>
 								</requireMavenVersion>
 								<requirePluginVersions>
 									<message>Best practice is to always define plugin versions!</message>
@@ -268,6 +273,14 @@
 				<configuration>
 					<doclint>none</doclint>
 				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -288,6 +301,16 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>false</autoReleaseAfterClose>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
