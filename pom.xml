@@ -167,7 +167,6 @@
 						should be fixed in >3.3 -->
 					<version>3.9.1</version>
 					<dependencies>
-						<!-- add support for WebDAV -->
 						<dependency>
 							<groupId>org.apache.maven.wagon</groupId>
 							<artifactId>wagon-webdav-jackrabbit</artifactId>
@@ -189,7 +188,6 @@
 		</pluginManagement>
 
 		<plugins>
-			<!-- changes.xml validation -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changes-plugin</artifactId>
@@ -201,14 +199,11 @@
 							<goal>changes-validate</goal>
 						</goals>
 						<configuration>
-							<!-- if set to true the build will fail if the changes file is invalid, 
-								if set to false warnings will be logged -->
 							<failOnError>true</failOnError>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<!-- compiler set to 1.7 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -217,7 +212,6 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			<!-- enforcing plugin and maven versions -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
@@ -256,7 +250,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- generate jar with no POM but with more extensive information -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -269,7 +262,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<!-- generate javadocs -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -284,7 +276,6 @@
 					<skip>false</skip>
 				</configuration>
 			</plugin>
-			<!-- generate sources jar too -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -360,9 +351,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changes-plugin</artifactId>
-				<!-- <version>2.12.1</version> -->
-				<!-- note that version is not inherited from pluginMngmt (issue MSITE-443; 
-					should be fixed in maven 3.1) -->
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -374,9 +362,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<!-- <version>3.1.2</version> -->
-				<!-- note that version is not inherited from pluginMngmt (issue MSITE-443; 
-					should be fixed in maven 3.1) -->
 				<reportSets>
 					<reportSet>
 						<reports>
