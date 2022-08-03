@@ -4,7 +4,7 @@
 
 	<groupId>eu.essilab</groupId>
 	<artifactId>lablib-checkboxtree</artifactId>
-	<version>4.0-beta-2</version>
+	<version>4.0-beta-3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<!-- Project Information -->

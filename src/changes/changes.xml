@@ -9,7 +9,7 @@
 		<!-- <release version="4.0-SNAPSHOT" date="in SVN"> <action dev="Lorenzo 
 			Bigagli" type="update">POM update</action> -->
 		<!-- </release> -->
-		<release version="4.0-beta-2" date="2022-08-03">
+		<release version="4.0-beta-3" date="TBD">
 			<action dev="Lorenzo Bigagli" type="update">project deployed to the Central Repo</action>
 			<action dev="Lorenzo Bigagli" type="update">POM revisited</action>
 			<action dev="Lorenzo Bigagli" type="update">target upgraded to Java 1.7</action>
