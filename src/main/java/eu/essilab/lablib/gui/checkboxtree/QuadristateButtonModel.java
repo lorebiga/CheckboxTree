@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2013 Enrico Boldrini, Lorenzo Bigagli This file is part of
+ * Copyright 2007-2022 Enrico Boldrini, Lorenzo Bigagli This file is part of
  * CheckboxTree. CheckboxTree is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or (at your
