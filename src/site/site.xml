@@ -31,7 +31,7 @@
 		</head>
 
 		<links>
-			<item name="ESSI-Lab" href="http://www.essi-lab.eu/" />
+			<item name="ESSI-Lab" href="https://essi-lab.eu/" />
 		</links>
 		
 		<menu name="${project.name}">

@@ -18,7 +18,7 @@
 		]]>
 		<!-- previously http://www.javaworld.com/javaworld/jw-09-2007/jw-09-checkboxtree.html -->
     </description>
-	<url>http://www.essi-lab.eu/projectsSites/lablib-checkboxtree</url>
+	<url>https://essi-lab.eu/projectsSites/lablib-checkboxtree</url>
 
 	<licenses>
 		<license>
@@ -31,7 +31,7 @@
 
 	<organization>
 		<name>ESSI-Lab</name>
-		<url>https://www.essi-lab.eu/</url>
+		<url>https://essi-lab.eu/</url>
 	</organization>
 
 	<developers>
