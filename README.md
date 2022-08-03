@@ -5,10 +5,11 @@ CheckboxTree is a Java Swing component providing a tree-like widget with checkbo
 http://www.essi-lab.eu/projectsSites/lablib-checkboxtree/
 
 See the site for documentation, history, etc.
+
 Contact the authors for other information and/or licensing options.
 
 # License
-Copyright 2007-2015 Enrico Boldrini <enrico.boldrini@cnr.it>, Lorenzo Bigagli <lorenzo.bigagli@cnr.it>
+Copyright 2007-2022 Lorenzo Bigagli <lorenzo.bigagli@cnr.it>, Enrico Boldrini <enrico.boldrini@cnr.it>
 
     This file is part of CheckboxTree.
 
@@ -22,5 +23,5 @@ CheckboxTree is distributed in the hope that it will be useful, but WITHOUT
   
 You should have received a copy of the GNU General Public License along with
  CheckboxTree; if not, write to the Free Software Foundation, Inc., 51 
- Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA 
+ Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  
