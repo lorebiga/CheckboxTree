@@ -407,7 +407,10 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<!-- <scm> <connection>scm:svn:https://essi-lab.eu/svn/lablib/lablib-checkboxtree/trunk</connection> 
-		</scm> -->
+	<scm>
+		<connection>scm:git:git://github.com/lorebiga/CheckboxTree.git</connection>
+		<developerConnection>scm:git:ssh://github.com:lorebiga/CheckboxTree.git</developerConnection>
+		<url>https://github.com/lorebiga/CheckboxTree/tree/master</url>
+	</scm>
 
 </project>
