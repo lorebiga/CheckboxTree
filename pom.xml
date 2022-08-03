@@ -22,9 +22,9 @@
 
 	<licenses>
 		<license>
-			<name>GNU General Public License</name>
-			<url>http://www.essi-lab.eu/projectsSites/lablib-checkboxtree/COPYING</url>
-			<distribution>manual</distribution>
+			<name>GPL-2.0-or-later</name>
+			<url>https://spdx.org/licenses/GPL-2.0-or-later.html</url>
+			<distribution>repo</distribution>
 			<comments>This license and any later version applies to the program.</comments>
 		</license>
 	</licenses>
