@@ -1,7 +1,7 @@
 # CheckboxTree
 CheckboxTree is a Java Swing component providing a tree-like widget with checkboxes in each node. Checkboxes can toggle between the checked and unchecked state. Disabled and greyed checkboxes are also supported. The CheckboxTree API design is inspired by the JTree interface.
 
-# Project Site
+# Project Site (to be updated)
 http://www.essi-lab.eu/projectsSites/lablib-checkboxtree/
 
 See the site for documentation, history, etc.
