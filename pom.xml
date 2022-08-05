@@ -9,14 +9,10 @@
 
 	<!-- Project Information -->
 	<name>CheckboxTree</name>
-	<description><![CDATA[CheckboxTree is a Java Swing component providing a tree-like widget with checkboxes in
+	<description>CheckboxTree is a Java Swing component providing a tree-like widget with checkboxes in
 		each node. Checkboxes can toggle between the checked and unchecked state. Disabled
 		and greyed checkboxes are also supported. The CheckboxTree API design is inspired by
-		the JTree interface.<br />
-		For more information, see this
-		<a href="https://www.infoworld.com/article/2077762/swing-based-tree-layouts-with-checkboxtree.html">JavaWorld article</a>.
-		]]>
-		<!-- previously http://www.javaworld.com/javaworld/jw-09-2007/jw-09-checkboxtree.html -->
+		the JTree interface.
     </description>
 	<url>https://essi-lab.eu/projectsSites/lablib-checkboxtree</url>
 
@@ -170,7 +166,7 @@
 						<dependency>
 							<groupId>org.apache.maven.wagon</groupId>
 							<artifactId>wagon-webdav-jackrabbit</artifactId>
-							<version>2.4</version>
+							<version>3.5.2</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -401,6 +397,10 @@
 	</reporting>
 
 	<distributionManagement>
+		<site>
+      		<id>site-dav</id>
+      		<url>dav:${project.url}</url>
+    	</site>
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
