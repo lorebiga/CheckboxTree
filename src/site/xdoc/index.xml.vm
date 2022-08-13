@@ -26,13 +26,6 @@
                 Supporting open-source software is fair and in your own interest!
             </p>
 
-            <p>The CheckboxTree in action.</p>
-
-            <applet
-                code="eu.essilab.lablib.checkboxtree.examples.CheckboxTreeApplet.class"
-                width="640" height="480"
-                archive="http://essi-lab.eu/nexus/service/local/artifact/maven/redirect?r=lab.open.rel&#38;g=${project.groupId}&#38;a=${project.artifactId}&#38;v=${project.version}&#38;p=${project.packaging}"
-            />
         </section>
 
 		<!-- <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script>
