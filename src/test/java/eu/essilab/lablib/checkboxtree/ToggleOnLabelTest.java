@@ -15,10 +15,6 @@ package eu.essilab.lablib.checkboxtree;
 
 import javax.swing.JFrame;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-import eu.essilab.lablib.checkboxtree.CheckboxTreeCellRenderer;
-import eu.essilab.lablib.checkboxtree.DefaultCheckboxTreeCellRenderer;
-
 /**
  * A CheckboxTree that toggles the check clicking on the JLabel.
  * 

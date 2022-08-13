@@ -32,13 +32,6 @@ import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTreeCellRenderer;
-import eu.essilab.lablib.checkboxtree.DefaultCheckboxTreeCellRenderer;
-import eu.essilab.lablib.checkboxtree.DefaultTreeCheckingModel;
-import eu.essilab.lablib.checkboxtree.TreeCheckingEvent;
-import eu.essilab.lablib.checkboxtree.TreeCheckingListener;
-import eu.essilab.lablib.checkboxtree.TreeCheckingModel;
-
 /**
  * This class was attached to ticket #5. It is supposed to implement multiple
  * nodes selection/deselection, but it doesn't seem to work.

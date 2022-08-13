@@ -10,9 +10,6 @@ import javax.swing.tree.TreePath;
 import org.junit.Before;
 import org.junit.Test;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-import eu.essilab.lablib.checkboxtree.TreeCheckingModel;
-
 /**
  * A test to see if TreeCheckingModel.isPathChecked() works.
  * 

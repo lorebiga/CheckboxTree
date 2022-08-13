@@ -22,11 +22,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-import eu.essilab.lablib.checkboxtree.TreeCheckingEvent;
-import eu.essilab.lablib.checkboxtree.TreeCheckingListener;
-import eu.essilab.lablib.checkboxtree.TreeCheckingModel;
-
 /**
  * A test for correct QuadristateCheckbox enabling/disabling.
  * 

@@ -20,7 +20,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-import eu.essilab.lablib.checkboxtree.QuadristateCheckbox;
 import eu.essilab.lablib.checkboxtree.QuadristateButtonModel.State;
 
 public class QuadristateCheckBoxTest {

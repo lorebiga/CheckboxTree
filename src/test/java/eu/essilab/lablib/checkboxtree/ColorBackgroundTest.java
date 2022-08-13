@@ -20,8 +20,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-
 /**
  * A test to see if the tree background works properly.
  * Changing tree.setOpaque(true); to false should toggle the background to green to red.

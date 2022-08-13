@@ -17,9 +17,6 @@ import javax.swing.JFrame;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-import eu.essilab.lablib.checkboxtree.DefaultCheckboxTreeCellRenderer;
-
 /**
  * A test tree whose nodes have no icons.
  * 

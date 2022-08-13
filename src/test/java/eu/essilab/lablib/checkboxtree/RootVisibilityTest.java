@@ -17,8 +17,6 @@ import javax.swing.JFrame;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-
 /**
  * A test tree to highlight the root visibility behavior.
  * 

@@ -15,8 +15,6 @@ package eu.essilab.lablib.checkboxtree;
 
 import javax.swing.tree.TreeNode;
 
-import eu.essilab.lablib.checkboxtree.CheckboxTree;
-
 public class CimballiTest {
 
     public static void main(String[] args) {
