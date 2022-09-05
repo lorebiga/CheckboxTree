@@ -7,22 +7,7 @@
     <body>
         <section name="${project.name} Download">
             <subsection name="Download with maven">
-                <p>If you build with Maven 2, simply add this repository to you POM:</p>
-                <source>
-                    <pre>
-&lt;repository&gt;
-    &lt;name&gt;ESSI-Lab repository&lt;/name&gt;
-    &lt;url&gt;http://essi-lab.eu/nexus/content/groups/open.repos&lt;/url&gt;
-    &lt;releases&gt;
-        &lt;enabled&gt;true&lt;/enabled&gt;
-    &lt;/releases&gt;
-    &lt;snapshots&gt;
-        &lt;enabled&gt;true&lt;/enabled&gt;
-    &lt;/snapshots&gt;
-&lt;/repository&gt;
-</pre>
-                </source>
-                <p>Then add this dependency:</p>
+                <p>Since version 4.0, CheckboxTree is on the Maven Central Repository. Simply add this dependency to your POM:</p>
                 <source>
                     <pre>
 &lt;dependency&gt;
@@ -33,10 +18,9 @@
 </pre>
                 </source>
             </subsection>
-            <subsection name="Direct download">
-                <p>To directly browse our repository for old and/or unreleased (snapshot) versions, visit <a
-                        href="http://essi-lab.eu/nexus/index.html#nexus-search;classname~checkboxtree"
-                        >this page</a>.</p>
+            <subsection name="Old versions">
+                <p>To directly browse our repository for old and/or unreleased versions, visit <a
+                        href="https://essi-lab.eu/nexus/#browse/search=keyword%3Dcheckboxtree">this page</a>.</p>
             </subsection>
         </section>
         
