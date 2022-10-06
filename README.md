@@ -8,7 +8,7 @@ For more information, see this <a href="https://www.infoworld.com/article/207776
 
 See the project site for documentation, history, etc.
 
-http://www.essi-lab.eu/projectsSites/lablib-checkboxtree/
+https://www.essi-lab.eu/projectsSites/lablib-checkboxtree/
 
 # Distribution
 
