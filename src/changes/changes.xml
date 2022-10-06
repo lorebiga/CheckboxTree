@@ -9,6 +9,8 @@
 		<!-- <release version="4.0-SNAPSHOT" date="in SVN"> <action dev="Lorenzo 
 			Bigagli" type="update">POM update</action> -->
 		<!-- </release> -->
+		<release version="4.0.1-SNAPSHOT" date="TBD">
+		</release>
 		<release version="4.0" date="2022-10-06">
 			<action dev="Lorenzo Bigagli" type="update">project deployed to the Central Repository</action>
 			<action dev="Lorenzo Bigagli" type="update">POM revisited</action>
