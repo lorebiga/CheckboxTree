@@ -4,7 +4,7 @@ CheckboxTree is a Java Swing component providing a tree-like widget with checkbo
 For more information, see this <a href="https://www.infoworld.com/article/2077762/swing-based-tree-layouts-with-checkboxtree.html">JavaWorld article</a>.
 <!-- previously http://www.javaworld.com/javaworld/jw-09-2007/jw-09-checkboxtree.html -->
 
-# Project Site (to be updated)
+# Project Site
 
 See the project site for documentation, history, etc.
 
